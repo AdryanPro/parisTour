@@ -1,0 +1,122 @@
+@media screen and (max-width: 1000px) {
+    .HeaderBg{
+        object-fit: cover;
+    }
+    .H1Overlay{
+    font-size: 2rem;
+    font-weight: bold;
+    pointer-events: none; /* Prevents interactions with the text */
+    }
+
+    .textOverlay{
+        color: white; /* Makes the text stand out */
+        font-size: 1.1rem;
+        font-weight: bold;
+        text-align: center;
+        pointer-events: none; /* Prevents interactions with the text */
+        word-spacing: -3px;
+        width: 88%;
+    }
+
+    .NavWrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        position: absolute;
+        gap: 10px;
+        width: 60%;
+        top: 85%; /* Centers the text vertically */
+        left: 6%;
+    
+        text-align: center;
+    }
+    .NavBarHeaderA{
+        background-color: #C53073;
+        /* width: 254px; */
+        min-width: 34%;
+        height: 44px;
+        align-content: center;
+        border-radius: 15px;
+        text-decoration: none;
+        color: white;
+    }
+    .TourSection {
+        text-align: center; /* Center the heading */
+        padding: 20px;
+    }
+    .Cards{
+        box-shadow: none;
+        padding-bottom: 33px;
+    }    
+    .Cards:hover{
+        box-shadow: none;
+        transform: scale(1);
+    }
+      .slick-slider {
+        max-width: 95%; /* Adjust carousel width for smaller screens */
+        min-height: 95%;
+    }
+
+    .slick-prev, .slick-next {
+        display: block; /* Ensure arrows are visible on small screens */
+    }
+
+    .Cards img {
+        width: 100%;
+        height: auto;
+    }
+    .VanPresentation{
+        display: none;
+    }
+    .ImageCarouselSection{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .VanCarouselImg{
+        min-width: 90vw;
+    }
+    .VanBtn{
+        margin-top: 6vh;
+    }
+}
+@media (min-width: 1001px) and (max-width: 1455px) {
+    .VanPresentation{
+        display: none;
+    }
+    .VanCarouselImg{
+        min-width: 90vw;
+        margin-left: 3vw;
+    }
+    .h1Versaille{
+        text-align: left;
+    }
+    .h1VersailleVan{
+        margin-bottom: 6vh;
+        margin-left: 6vw;
+    }
+    .VanBtn{
+        margin-top: 6vh;
+        font-size: 1.3rem;
+        min-width: 24%;
+        min-height: 19% !important;
+        padding: 20px;
+        margin-left: 39vw;
+    }
+    
+}
+
+  @media (min-width: 1455px) {
+    .cardWrapper{
+        margin-left: 8vw;
+        overflow: hidden;
+    }
+    .ImageCarouselSection{
+        visibility: hidden; /* Hides the section visually */
+        position: absolute; /* Removes it from the layout flow */
+        height: 0; /* Ensures it doesn't take up space */
+        overflow: hidden;
+    }
+  }

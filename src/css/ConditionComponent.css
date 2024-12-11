@@ -1,0 +1,18 @@
+.PageConditonWrapper{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.H1Condition{
+    margin-top: 3vh;
+}
+.ConditionTextWrapper{
+    margin-left: 9vw;
+    margin-right: 9vw;
+    margin-top: 6vh;
+}
+.ConditionP{
+    text-align: justify;
+    font-size: 1.3rem;
+}

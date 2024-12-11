@@ -1,0 +1,259 @@
+@media (max-width: 1200px) {
+    .VersaillesHeader{
+        position: static;
+        background-color: #C53073;
+        min-height: 8vh;
+        border-radius: 0px;
+        margin: 0;
+        margin-top: 4vh;
+        color: aliceblue;
+        align-content: center;
+        text-align: left;
+        /* padding-left: 5vw;
+        padding-right: 5vw;
+        padding-bottom: 9vh; */
+        max-width: 100%;
+        /* display: none; */
+    }
+    .VersaillesHeaderH1{
+        padding-top: 6vh;
+        font-size: 2.3rem;
+    }
+    .VersaillesShowAndBuy{
+        display: none;
+    }
+    .VersaillesShowAndBuyMobileCard{
+        background-color: red;
+        min-height: 80%;
+        width: 90vw;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        border: 2px solid #e8e8e8;
+        border-radius: 24px;
+        background-color: #fff;
+        margin-top: 8vh;
+    }
+    .carrouselMobile{
+        max-width: 18vw;
+        max-height: 416px;
+        margin-top: 0;
+        margin-right: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    .VersaillesMobileCarouselSlide{
+        /* max-height: 48vh;
+        min-width: 100vw; */
+        margin: 0;
+        padding: 0;
+        width: 500%;
+        min-height: 180% !important;
+        object-fit: contain;
+        margin-bottom: 3vh;
+    }
+    .SliderImgBtnVersailles {
+        position: absolute;
+        background-color: #C53073;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        cursor: pointer;
+        font-size: 20px;
+        margin: 0 ;
+    }
+    .Next{
+        margin-right: -96vw !important;
+        margin-bottom: 8vh;
+    }
+    .Prev{
+        margin-left: 33vw !important;
+        margin-bottom: 8vh;
+
+    }
+    .MobileCardP{
+        margin: 0px;
+    }
+    /* .MobileCardTitle{
+        margin-top: 3vh;
+    } */
+    .VersaillesMobileCardShowAndBuyTxt{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .DateSelecteur{
+        min-width: 66vw;
+        text-align: center;
+        border: 2px solid transparent;
+        /* width: 15em; */
+        height: 2.5em;
+        padding-left: 0.8em;
+        outline: none;
+        overflow: hidden;
+        background-color: #f3f3f3;
+        border-radius: 10px;
+        transition: all 0.5s;
+    }
+    .TimeSelecteur{
+        min-width:72vw;
+        text-align: center;
+        border: 2px solid transparent;
+        height: 2.5em;
+        padding-left: 0.8em;
+        outline: none;
+        overflow: hidden;
+        background-color: #f3f3f3;
+        border-radius: 10px;
+        transition: all 0.5s;
+    }
+    .VersaillesMobileDateTime{
+        text-align: center;
+    }
+    .VersaillesBuyCardBtnMobile{
+        width: 169px;
+        height: 53px;
+        border-radius: 24px;
+        background-color: #C53073;
+        color: #fff;
+        border: none;
+        margin-top: 3vh;
+        margin-bottom: 3vh;
+    }
+    .popupContentStyle {
+        max-width: 78%; /* Shrink the popup width */
+        padding: 0px; /* Reduce padding */
+    }
+
+    .FormPopUp{
+        min-width: 50% !important;
+    }
+    .popupSubmitButton{
+        max-width: 80%;
+    }
+    .popupCloseButton{
+        max-width: 80%;
+    }
+    .no-scroll {
+        overflow: hidden;
+    }
+    .VersaillesDescriptionSection{
+        margin: 0;
+    }
+    .VersaillesDescriptionH2{
+        margin-left: 6vw;
+        font-size: 1.4rem;
+    }
+    .VersaillesDescriptionCrard{
+        margin-left: 6vw;
+        width: 83vw;
+        font-size: 1rem;
+    }
+    .VersaillesDescriptionTitleH2{
+        font-size: 1.2rem;
+        margin-left: 6vw;
+    }
+    .VersaillesDescriptionP{
+        font-size: 1rem;
+        margin-left: 9vw;
+        width: 78vw;
+    }
+    .YouMayAlsoLikeVersaillesSection{
+        display: none;
+    }
+
+
+    .YouMayAlsoLikeMobile {
+        text-align: center;
+        margin: 20px 0;
+    }
+    .YouMayAlsoLikeMobileH2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    }
+    .carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 2px solid #e8e8e8;
+    border-radius: 24px;
+    background-color: #fff;
+    max-width: 80vw;
+    }
+    .carousel-slide {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    }
+    .carousel-card {
+    width: 100%;
+    text-align: center;
+    text-decoration: none; /* Remove the underline */
+    color: inherit; /* Inherit the text color from the parent */
+    }
+    .CardMobile {
+    width: 100%;
+    text-align: center;
+    }
+    .CardMobileImg {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    }
+    .CardMobileTitle {
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+    }
+    .CardMobilePrice {
+    font-size: 16px;
+    color: #555;
+    }
+    .CardMobileTxt{
+        text-decoration: none;
+
+    }
+    .carousel-button {
+    background-color: #C53073;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    }
+    .carousel-button:hover {
+    background-color: #ad2b65;
+    }
+  }
+
+
+  @media (min-width: 600px) and (max-width: 860px) {
+    .MobileCardTitle{
+        margin-top: 9vh;
+    }
+  }
+
+@media (min-width: 861px) and (max-width: 1200px) {
+    .MobileCardTitle{
+        margin-top: 22%;
+    }
+}
+
+  @media (min-width: 1201px) {
+    .VersaillesShowAndBuyMobileCard{
+        display: none;
+    }
+
+     .YouMayAlsoLikeMobile{
+        display: none;
+     }
+}

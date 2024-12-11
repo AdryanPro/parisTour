@@ -1,0 +1,318 @@
+.VersaillesWrapper {
+  text-align: justify;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.VersaillesHeader{
+position: absolute;
+z-index: -1;
+background-color: #C53073;
+min-width: 58vw;
+min-height: 34vh;
+border-radius: 24px;
+margin-top: 11vh;
+color: aliceblue;
+align-content: center;
+text-align: justify;
+display: flex;
+
+padding-left: 5vw;
+padding-right: 5vw;
+padding-bottom: 9vh;
+margin-left: 3vw;
+margin-right: 3vw;
+}
+.VersaillesHeaderH1{
+padding-top: 6vh;
+font-size: 2.4rem;
+}
+.VersaillesShowAndBuy{
+display: flex;
+flex-direction: row;
+margin-top: 19vh;
+/* gap: 4px; */
+}
+.carrousel {
+width: 40vw;
+height: 416px;
+margin-top: 16vh;
+margin-right: 5vw;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+}
+.VersaillesImg{
+  width: 48vw !important;
+  height: 66vh;
+  margin-left: 8vw;
+  margin-top: 28vh;
+  border-radius: 24px;
+  overflow: hidden; /* Ensures images don't overflow the container */
+  object-fit: cover; /* Ensures the image scales nicely to fit the square */
+  transition: transform 0.3s ease; /* Smooth transition for better UX */
+}
+.SliderImgBtnVersailles {
+  position: absolute;
+  background-color: #C53073;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 10;
+  margin: 0 ;
+}
+.Prev{
+  margin-right: 36% !important;
+  margin-top: 23% !important;
+}
+.Next{
+  margin-top: 23% !important;
+  margin-left: 52% !important;
+}
+
+.SliderImgBtn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.VersaillesPaymentCard{
+  border: 2px solid #e8e8e8;
+  border-radius: 24px;
+  background-color: #fff;
+  min-height: 36vh;
+  max-height:86vh;
+  width: 26vw;
+  margin-top: 27vh;
+  margin-left: 6vw;
+  margin-bottom: 12vh;  
+  text-align: center;
+  overflow: hidden;
+}
+.CountWrapper{
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 8px;
+}
+.VersaillesBtnCounter{
+width: 23px;
+height: 23px;
+border-radius: 50%;
+background-color: #C53073;
+color: #fff;
+border: none;
+}
+.VersaillesCountP{
+font-size: 1.3rem;
+}
+.DateSelecteur{
+width: 38%;
+text-align: center;
+border: 2px solid transparent;
+width: 15em;
+height: 2.5em;
+padding-left: 0.8em;
+outline: none;
+overflow: hidden;
+background-color: #f3f3f3;
+border-radius: 10px;
+transition: all 0.5s;
+}
+.VersaillesBuyCardBtn{
+background-color: #C53073;
+border-radius: 24px;
+border: none;
+color: #fff;
+width: 43%;
+height: 9%;
+margin-top: 3vh;
+margin-bottom: 9vh;
+font-weight: bold;
+}
+.VersaillesBuyCardH3{
+font-weight: lighter;
+
+}
+.VersaillesBuyCardP{
+font-weight: lighter;
+}
+.VersaillesPriceBuyCardH3{
+font-weight: lighter;
+margin-top: 23px;
+margin-bottom: 0px;
+}
+@keyframes blink {
+0% { opacity: 1; }
+50% { opacity: 0.6; }
+100% { opacity: 1; }
+}
+.PaymentWarnning{
+animation: blink 2s infinite;
+color: red; /* Optional: Set a color for emphasis */
+font-weight: bold; /* Optional: Make the text bold */
+}
+
+
+
+.FormPopUp {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 20px;
+width: 100%;
+min-width: 500px;
+max-width: 800px;
+overflow: hidden;
+}
+.PopUpH1{
+color: #C53073;
+}
+.InputPopUp {
+width: 100%;
+padding: 10px;
+font-size: 16px;
+border: none;
+border-bottom: 2px solid #ccc; /* Add a bottom border */
+outline: none;
+transition: border-color 0.3s;
+}
+.LabelInputDiv{
+width: 75%;
+text-align: justify;
+margin-right: 3%;
+}
+.InputPopUp:focus {
+border-bottom-color: #C53073; /* Change color on focus for better visibility */
+}
+.LabelPopUp {
+font-size: 14px;
+font-weight: bold;
+text-align: left !important;
+min-width: 214px;
+color: #262626;
+margin-bottom: 5px;
+}
+.popupCloseButton, .popupSubmitButton{
+width: 89%;
+padding: 10px;
+font-size: 16px;
+color: white;
+background-color: #007bff;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+.popupCloseButton{
+margin-top: 2vh;
+}
+.popupSubmitButton, .popupCloseButton {
+background-color: #C53073;
+}
+.popupSubmitButton:hover{
+background-color: green;
+}
+.popupCloseButton:hover {
+background-color: red;
+}
+/* .popupSubmitButton {
+border: none;
+outline: none;
+background-color: #C53073;
+padding: 10px;
+border-radius: 10px;
+color: #fff;
+font-size: 16px;
+transition: background-color 0.3s ease;
+}
+
+.popupSubmitButton:hover {
+background-color: #bc2b6c;
+} */
+
+
+.VersaillesDescriptionSection{
+display: flex;
+justify-content: center;
+align-items: flex-start;
+flex-direction: column;
+margin-left: 12vw;
+}
+.VersaillesDescriptionH2{
+font-size: 2rem;
+}
+.VersaillesDescriptionCrard{
+border: 2px solid #fff;
+border-radius: 24px;
+background-color: #fff;
+width: 66vw;
+line-height: 2.3;
+box-shadow: 15px 15px 30px #bebebe,
+           -15px -15px 30px #ffffff;
+
+margin-bottom: 8vh;
+font-size: 1.3rem;
+}
+.VersaillesDescriptionP{
+text-align: justify;
+width: 73%;
+font-size: 1.3rem;
+}
+
+
+
+.VersaillesCardWrapperYouMayAlsoLike{
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+justify-content: flex-start;
+gap: 108px;
+margin-top: 8vh;
+}
+.YouMayAlsoLikeVersaillesH2{
+margin-top: 9vh;
+font-size: 2rem;
+}
+
+.CardsVersailles{
+background-color: white;
+border-radius: 15px;
+/* box-shadow: 18px 18px 97px rgb(52, 52, 52);  */
+max-width: 20vw;
+min-height: 88vh;
+/* box-shadow:
+-3px -10px 15px #ffffff,
+-3px -5px 8px #ffffff,
+-10px 0px 15px #ffffff,
+3px 10px 12px rgba(0, 0, 0, 0.2); */
+box-shadow: 20px 20px 60px #bebebe,
+-20px -20px 60px #ffffff;
+/* box-shadow: 0px 7px 47px 2px #7E7E7E; */
+margin-bottom: 18vh;
+text-align: center;
+}
+.CardsVersailles:hover{
+box-shadow: 0px 7px 47px 2px #7E7E7E;
+transform: scale(1.1);
+}
+.VersaillesCardImg{
+object-fit: cover;
+width: 100%;
+}
+.CardVersaillesP{
+padding-left: 2vw;
+padding-right: 2vw;
+font-size: 1.3rem;
+}
+.Price{
+font-size: 1.6rem;
+}
+.VersaillesLinkCard{
+text-decoration: none;
+color: #000000;
+}

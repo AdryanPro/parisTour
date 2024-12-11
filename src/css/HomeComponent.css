@@ -1,0 +1,189 @@
+.HomeWrapper{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+.Header{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    /* display: inline-block; */
+}
+.HeaderBg{
+    display: block;
+    /* object-fit: contain; */
+    max-width: 93vw;
+    min-width: 90vw;
+    height: 89vh;
+    margin-top: 11vh;
+}
+.H1Overlay{
+    position: absolute; /* Allows the text to be positioned over the image */
+    top: 30%; /* Centers the text vertically */
+    left: 50%; /* Centers the text horizontally */
+    transform: translate(-50%, -50%); /* Adjusts for the text's width/height */
+    color: white; /* Makes the text stand out */
+    font-size: 500%;
+    font-weight: bold;
+    pointer-events: none; /* Prevents interactions with the text */
+}
+.textOverlay{
+    position: absolute; /* Allows the text to be positioned over the image */
+    top: 55%; /* Centers the text vertically */
+    left: 50%; /* Centers the text horizontally */
+    transform: translate(-50%, -50%); /* Adjusts for the text's width/height */
+    color: white; /* Makes the text stand out */
+    font-size: 24px;
+    font-weight: bold;
+    pointer-events: none; /* Prevents interactions with the text */
+    text-align: center;
+}
+.NavWrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    position: absolute;
+    gap: 39px;
+    width: 60%;
+    top: 85%; /* Centers the text vertically */
+    left: 21%;
+
+    text-align: center;
+}
+.NavBarHeaderA{
+    background-color: #C53073;
+    /* width: 254px; */
+    width: 28%;
+    height: 44px;
+    align-content: center;
+    border-radius: 15px;
+    text-decoration: none;
+    color: white;
+}
+.h1SeeOurTours {
+  font-size: 2rem; /* Adjust size as needed */
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none; /* Remove default underline */
+  display: inline-block; /* Ensure underline fits text */
+  position: relative;
+}
+.h1SeeOurTours::after {
+  content: '';
+  display: block;
+  width: 69%; /* Full width of text */
+  height: 2px; /* Thickness of underline */
+  background-color: black; /* Color of underline */
+  position: absolute;
+  bottom: -5px; /* Adjust to place underline below text */
+  left: 0; /* Align with the start of the text */
+}
+.h1VersailleVan{
+    text-align: left;
+}
+.TourSection{
+    margin: 4%;
+}
+.slick-track{
+    max-height: 57vh;
+}
+.cardWrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 18px;
+}
+.Cards{
+    background-color: white;
+    border-radius: 15px;
+    /* box-shadow: 18px 18px 97px rgb(52, 52, 52);  */
+    max-width: 292px;
+    min-width: 200px;
+    min-height: 406px;
+    box-shadow:
+    -3px -10px 15px #ffffff,
+    -3px -5px 8px #ffffff,
+    -10px 0px 15px #ffffff,
+    3px 10px 12px rgba(0, 0, 0, 0.2);
+    margin-bottom: 22vh;
+    margin-top: 6vh;
+    text-align: center  ;
+}
+.Cards:hover{
+    /* box-shadow: 0px 7px 47px 2px #7E7E7E; */
+        box-shadow: 20px 20px 60px #bebebe,
+    -20px -20px 60px #ffffff;
+    transform: scale(1.1);
+}
+.CardImg{
+    object-fit: contain;
+}
+
+.Section3{
+    height: 24vh;
+    width: 100vw;
+    background-color: #C53073;
+    margin-bottom: 8vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Section3H1{
+    color: #e8e8e8;
+}
+.VanPresentation{
+    display: flex;
+    justify-content: center;
+    margin: 10vh 10vh;
+    margin-bottom: 50vh;
+}
+.VanCard{
+    display: flex;
+    flex-direction: row-reverse;
+    max-width: 88vw;
+    min-height: 62vh;
+    border: 1px solid #e8e8e8;
+    border-radius: 24px;
+    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+    overflow: hidden;
+}
+.VanCardImg{
+    border: none;
+    cursor: pointer;
+    object-fit: cover;
+}
+.VanCardTxt{
+    /* max-width: 97vw; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.VanH1{
+    margin-top: 4%;
+    max-width: 86%;
+    text-align: center;
+    font-size: 2.1rem;
+}
+.VanP{
+    text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
+    max-width: 90%;
+    min-height: 36%;
+    font-size: 1.4rem;
+}
+.VanBtn{
+    color: #ffffff;
+    background-color: #C53073;
+    border-radius: 24px;
+    border: none;
+    cursor: pointer;
+    margin-top: 1vh;
+    font-size: 1.3rem;
+    min-width: 24%;
+    min-height: 9%;
+}
