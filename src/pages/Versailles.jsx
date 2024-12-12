@@ -12,7 +12,10 @@ import { Link } from 'react-router-dom'
 import emailjs from 'emailjs-com';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+
+{/* <FontAwesomeIcon icon={faArrowRight} /> */}
 export default function Versailles() {
     AOS.init();
     const slides = [VersaillesImg1, VersaillesImg2, VersaillesImg3, VersaillesImg4];
@@ -63,7 +66,7 @@ export default function Versailles() {
     };
   
     // General departure times available every day
-    const departureTimes = ["07:30 AM"];
+    const departureTimes = ["07:30 AM","08:30 AM","09:30 AM","10:30 AM","11:30 AM","12:30 PM", "13:00 PM", "13:30 PM"];
     
     //PopUp handeler
     const [isPopupVisible, setIsPopupVisible] = useState(false);
@@ -80,6 +83,7 @@ export default function Versailles() {
         document.body.classList.remove("no-scroll");
       }
     };
+    console.log('Popup Visibility:', isPopupVisible);
     //Set the price 
     const price = 100;
   
@@ -185,6 +189,7 @@ export default function Versailles() {
       prevIndex === 0 ? cards.length - 1 : prevIndex - 1
     );
   };
+  // console.log('Popup Visibility:', isPopupVisible);
 
   return (
     <div className="VersaillesWrapper">
@@ -203,10 +208,10 @@ export default function Versailles() {
             <img src={slides[currentIndex]} alt={`Slide ${currentIndex + 1}`} className="VersaillesImg" />
           </div>
           <button className='SliderImgBtnVersailles Prev' onClick={prevSlide}>
-            {"<"}
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="30px" width="30px" className='VersaillesSvg'><path fill="#ffffff" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
           </button>
           <button className='SliderImgBtnVersailles Next' onClick={nextSlide}>
-            {">"}
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="30px" width="30px" className='VersaillesSvg'><path fill="#ffffff" d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
           </button>
         </div>
 
@@ -346,10 +351,10 @@ export default function Versailles() {
           <div className="item">
             <img src={slidesMobile[currentIndex]} alt={`Slide ${currentIndex + 1}`} className="VersaillesMobileCarouselSlide" />
           </div>
-          <button className='SliderImgBtnVersailles Prev' onClick={prevSlide}>
+          <button className='SliderImgBtnVersaillesMobile PrevMobile' onClick={prevSlide}>
             {"<"}
           </button>
-          <button className='SliderImgBtnVersailles Next' onClick={nextSlide}>
+          <button className='SliderImgBtnVersaillesMobile NextMobile' onClick={nextSlide}>
             {">"}
           </button>
         </div>
@@ -503,12 +508,12 @@ export default function Versailles() {
           <div className="VersaillesCardWrapperYouMayAlsoLike">
             <Link to='/Bruges' className='VersaillesLinkCard'>
               <div className='CardsVersailles'>
-                  <img src={Bruges} className='VersaillesCardImg' alt="Dday" />
+                  <img src={Bruges} className='VersaillesCardImg' alt="Bruges" />
+                  <h3>Bruges</h3>
                   <p className='CardVersaillesP'>
-                    Often called the "Venice of the North," is a charming medieval city in Belgium renowned 
+                    Often called the "Venice of the North", is a charming medieval city in Belgium renowned 
                     for its picturesque canals, cobblestone streets ... 
-                    A UNESCO World Heritage Site, it offers visitors a blend of cultural history, vibrant 
-                    markets, and indulgent Belgian chocolate and beer experiences.
+                    
                   </p>
                   <p className='CardVersaillesP Price'>180€</p>
               </div>
@@ -516,11 +521,9 @@ export default function Versailles() {
             <Link to='/D-Day' className='VersaillesLinkCard'>
               <div className='CardsVersailles'>
                   <img src={Dday} className='VersaillesCardImg' alt="Dday" />
+                  <h3 className='CardH3'>D-day</h3>
                   <p className='CardVersaillesP'>
-                      The D-Day beaches in Normandy, France, are historic sites where Allied forces landed on 
-                      June 6, 1944, marking a pivotal moment in World War II. These beaches, now serene and 
-                      dotted with memorials and museums, stand as solemn reminders of the bravery and sacrifice 
-                      that changed the course of history.
+                    The D-Day beaches in Normandy, France, are the historic sites of the Allied landings on June 6, 1944, a decisive moment in World War II
                   </p>
                   <p className='CardVersaillesP Price'>250€</p>
               </div>
@@ -529,11 +532,9 @@ export default function Versailles() {
             <Link to='/Mont-Saint-Michel' className='VersaillesLinkCard'>
               <div className='CardsVersailles'>
                   <img src={Mont} className='VersaillesCardImg' alt="Mont" />
+                  <h3 className='CardH3'>Mont-Saint-Michel</h3>
                   <p className='CardVersaillesP'>
-                  Mont Saint-Michel, a breathtaking medieval abbey perched atop a rocky island, 
-                  is one of France's most iconic landmarks. Surrounded by dramatic tidal waters, 
-                  it seamlessly blends natural beauty with architectural grandeur, offering an 
-                  unforgettable experience.
+                    Audio guided tour of the Mont-Saint-Michel, day trip from Paris with luxury transportation
                   </p>
                   <p className='CardVersaillesP Price'>180€</p>
               </div>
