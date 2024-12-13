@@ -156,6 +156,8 @@
     }
     .Cards{
         margin-bottom: 6vh;
+        min-height: 29vh;
+        max-height: 29vh;
     }
     .Cards:hover{
         box-shadow: none;
@@ -205,11 +207,13 @@
         display: none;
     }
     .Cards{
-        margin-bottom: 3vh;
+        margin-bottom: 6vh;
+        max-height: 39vh;
+        min-height: 29vh;
 
     }
     .Cards:hover{
-        box-shadow: none;
+        /* box-shadow: none; */
         transform: scale(1);
     }
     .slick-dots{

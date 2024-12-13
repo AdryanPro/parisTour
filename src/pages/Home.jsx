@@ -118,7 +118,7 @@ export default function Home() {
                   The D-Day beaches in Normandy, France, are historic landmarks where Allied forces courageously 
                   landed during World War II, changing the course of history.
                 </p>
-                <p>250€</p>
+                {/* <p>250€</p> */}
             </div>
           </div>
 
@@ -131,7 +131,7 @@ export default function Home() {
                 medieval city in Belgium, known for its canals, cobblestone streets, and 
                 enchanting Gothic architecture.
               </p>
-              <p>180€</p>
+              {/* <p>180€</p> */}
             </div>
           </div>
 
@@ -142,7 +142,7 @@ export default function Home() {
               <p>
               L’Essentiel de Versailles Visite d’une demie- journée du chateaux de Versailles avec Acces Priotitaire
               </p>
-              <p>100€</p>
+              {/* <p>100€</p> */}
             </div>
           </div>
 
@@ -153,7 +153,7 @@ export default function Home() {
               <p>
               Audio guided tour of the Mont-Saint-Michel, day trip from Paris with luxury transportation
               </p>
-              <p>180€</p>
+              {/* <p>180€</p> */}
             </div>
           </div>
         </Slider>
