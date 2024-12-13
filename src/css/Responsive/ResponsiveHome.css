@@ -1,6 +1,11 @@
 @media screen and (max-width: 1000px) {
     .HeaderBg{
+        display: none;
+    }
+    .HeaderBgMobile{
         object-fit: cover;
+        margin-top: 3vh;
+        min-height: 79vh;
     }
     .H1Overlay{
     font-size: 2rem;
@@ -45,10 +50,14 @@
         text-align: center; /* Center the heading */
         padding: 20px;
     }
+    .h1SeeOurTours::after {
+        display: none;
+    }
     .Cards{
-        box-shadow: none;
-        padding-bottom: 3px;
-        /* margin-bottom: 0 !important; */
+        /* box-shadow: none; */
+        margin: 0;
+        padding: 0;
+        margin-bottom: 8vh;            
     }    
     .Cards:hover{
         box-shadow: none;
@@ -62,10 +71,33 @@
     .slick-prev, .slick-next {
         display: block; /* Ensure arrows are visible on small screens */
     }
-
+    /* Add gap between slides */
+    .slick-slide {
+        padding: 0 10px; /* Add space between cards */
+        box-sizing: border-box; /* Ensure padding doesn't break alignment */
+    }
+    
+    /* Ensure all cards are properly aligned */
+    .slick-list {
+        margin: 0; /* Remove unnecessary margin */
+        overflow: hidden; /* Prevent overflow of adjacent cards */
+    }
+    
+    /* Force each slide to take full width of the container */
+    .slick-slide > div {
+        width: 100%; /* Ensure card takes full width */
+        display: flex;
+        justify-content: center;
+    }
     .Cards img {
         width: 100%;
         height: auto;
+    }
+    .Section3{
+        margin-top: 3vh;
+    }
+    .Section3H1{
+        font-size: 1.3rem;
     }
     .VanPresentation{
         display: none;
@@ -76,11 +108,19 @@
         justify-content: center;
         align-items: center;
     }
+    .ImageSlide {
+        margin: 0 15px; /* Adds horizontal gap between slides */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .VanCarouselImg{
         min-width: 90vw;
     }
     .VanBtn{
-        margin-top: 6vh;
+        min-width: 90vw;
+        object-fit: contain;
+        border-radius: 10px; /* Optional: Adds some styling to the images */
     }
 }
 @media (min-width: 1001px) and (max-width: 1455px) {
@@ -119,5 +159,8 @@
         position: absolute; /* Removes it from the layout flow */
         height: 0; /* Ensures it doesn't take up space */
         overflow: hidden;
+    }
+    .HeaderBgMobile{
+        display: none;
     }
   }

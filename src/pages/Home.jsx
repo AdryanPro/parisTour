@@ -1,5 +1,6 @@
 import React from 'react'
 import HeaderBg from '../assets/Images/homeImg.png'
+import HeaderBgMobile from '../assets/Images/homeImgMobile.png'
 import { Link } from 'react-router-dom'
 import '../css/HomeComponent.css'
 import '../css/Responsive/ResponsiveHome.css'
@@ -29,9 +30,12 @@ export default function Home() {
         },
       },
       {
-        breakpoint: 768, // Screen size below 768px
+        breakpoint: 768, // Below 768px
         settings: {
-          slidesToShow: 1,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: true,
         },
       },
     ],
@@ -53,6 +57,7 @@ export default function Home() {
     <div className='HomeWrapper'>
       <div className='Header'>
         <img src={HeaderBg} className='HeaderBg' alt="Header Bg where you can see the eiffle tower" />
+        <img src={HeaderBgMobile} className='HeaderBgMobile' alt="Header Bg where you can see the eiffle tower" />
         <h1 className='H1Overlay'>Paris Tours</h1>
         <p className='textOverlay'>
           Explore a variety of destinations in ultimate 
