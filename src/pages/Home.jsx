@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import '../css/HomeComponent.css'
 import '../css/Responsive/ResponsiveHome.css'
 import Dday from '../assets/Images/D-DayCardImg.png'
-import Bruges from '../assets/Images/BrugesAssets/BrugesImg1.png'
+import Bruges from '../assets/Images/D-DayCardImg.png' //'../assets/Images/BrugesAssets/BrugesImg1.png'
 import Versailles from '../assets/Images/VersaillesCardImg.png'
 import Mont from '../assets/Images/MontCardImg.png'
 import VanCard from '../assets/Images/VanCardImg.png'
@@ -29,7 +29,19 @@ export default function Home() {
     slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 1000, // Screen size below 1000px
+        breakpoint: 3000, // Screen size below 1000px
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 1700, // Screen size below 1000px
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 1050, // Screen size below 1000px
         settings: {
           slidesToShow: 2,
         },

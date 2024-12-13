@@ -7,8 +7,8 @@
     }
     .HeaderBgMobile{
         object-fit: cover;
-        margin-top: 3vh;
         min-height: 79vh;
+        min-width: 100%;
         max-width: 100vw;
     }
     .H1Overlay{
@@ -140,6 +140,9 @@
     .VanPresentation{
         display: none;
     }
+    /* .VanP{
+        font-size: 1.5rem;
+    } */
     .VanCarouselImg{
         min-width: 90vw;
         margin-left: 3vw;
@@ -151,18 +154,37 @@
         margin-bottom: 6vh;
         margin-left: 6vw;
     }
+    .Cards{
+        margin-bottom: 6vh;
+    }
+    .Cards:hover{
+        box-shadow: none;
+        transform: scale(1);
+    }
     .VanBtn{
         margin-top: 6vh;
         font-size: 1.3rem;
         min-width: 24%;
         min-height: 19% !important;
-        padding: 20px;
-        margin-left: 39vw;
+        padding: 15px;
     }
-    
+    .ImageCarouselSection{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 0; /* Adds padding to the section */
+        overflow: hidden; /* Hides overflowing content */
+    }
+    .HeaderBgMobile{
+        display: none;
+    }
 }
 
-  @media (min-width: 1455px) {
+  @media (min-width: 1456px) {
+    .HeaderBgMobile{
+        display: none;
+    }
     .cardWrapper{
         margin-left: 8vw;
         overflow: hidden;
@@ -176,4 +198,35 @@
     .HeaderBgMobile{
         display: none;
     }
+    .Cards{
+        margin-bottom: 3vh;
+    }
+    .Cards:hover{
+        box-shadow: none;
+        transform: scale(1);
+    }
   }
+@media (min-width: 1456px){
+    .H1Overlay{
+        font-size: 8.8rem;
+    }
+    .textOverlay{
+        font-size: 2.9rem;
+    }
+    .NavBarHeaderA{
+        font-size: 1.6rem;
+    }
+    .Section3H1{
+        font-size: 3rem;
+    }
+    .VanPresentation{
+        margin-bottom: 6vh;
+    }
+    .VanH1{
+        font-size: 2.9rem;
+    }
+    .VanP{
+        font-size: 2rem;
+    }
+
+}
