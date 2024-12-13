@@ -182,6 +182,12 @@
 }
 
   @media (min-width: 1456px) {
+    .H1Overlay{
+        font-size: 6rem;
+    }
+    .textOverlay{
+        font-size: 2.9rem;
+    }
     .HeaderBgMobile{
         display: none;
     }
@@ -200,13 +206,17 @@
     }
     .Cards{
         margin-bottom: 3vh;
+
     }
     .Cards:hover{
         box-shadow: none;
         transform: scale(1);
     }
+    .slick-dots{
+        margin-bottom: 3vh;
+    }
   }
-@media (min-width: 1456px){
+@media (min-width: 2000px){
     .H1Overlay{
         font-size: 8.8rem;
     }

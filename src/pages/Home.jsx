@@ -112,41 +112,49 @@ export default function Home() {
         <Slider {...settings} className="cardWrapper">
           <div className='Cards' onClick={() => window.location.href = '/D-Day'}>
             <img src={Dday} className='CardImg' alt="Dday" />
-            <p>D-day</p>
-            <p>
-              The D-Day beaches in Normandy, France, are historic landmarks where Allied forces courageously 
-              landed during World War II, changing the course of history.
-            </p>
-            <p>250€</p>
+              <div className="txtCard">
+                <p>D-day</p>
+                <p>
+                  The D-Day beaches in Normandy, France, are historic landmarks where Allied forces courageously 
+                  landed during World War II, changing the course of history.
+                </p>
+                <p>250€</p>
+            </div>
           </div>
 
           <div className='Cards' onClick={() => window.location.href = '/Bruges'}>
             <img src={Bruges} className='CardImg' alt="Bruges" />
-            <p>Bruges</p>
-            <p>
-              Bruges, often called the "Venice of the North," is a beautifully preserved
-               medieval city in Belgium, known for its canals, cobblestone streets, and 
-               enchanting Gothic architecture.
-            </p>
-            <p>180€</p>
+            <div className="txtCard">
+              <p>Bruges</p>
+              <p>
+                Bruges, often called the "Venice of the North," is a beautifully preserved
+                medieval city in Belgium, known for its canals, cobblestone streets, and 
+                enchanting Gothic architecture.
+              </p>
+              <p>180€</p>
+            </div>
           </div>
 
           <div className='Cards' onClick={() => window.location.href = '/Versailles'}>
             <img src={Versailles} className='CardImg' alt="Versailles" />
-            <p>Versailles</p>
-            <p>
-            L’Essentiel de Versailles Visite d’une demie- journée du chateaux de Versailles avec Acces Priotitaire
-            </p>
-            <p>100€</p>
+            <div className="txtCard">
+              <p>Versailles</p>
+              <p>
+              L’Essentiel de Versailles Visite d’une demie- journée du chateaux de Versailles avec Acces Priotitaire
+              </p>
+              <p>100€</p>
+            </div>
           </div>
 
           <div className='Cards' onClick={() => window.location.href = '/Mont-Saint-Michel'}>
             <img src={Mont} className='CardImg' alt="Mont" />
-            <p>Mont-Saint-Michel</p>
-            <p>
-            Audio guided tour of the Mont-Saint-Michel, day trip from Paris with luxury transportation
-            </p>
-            <p>180€</p>
+            <div className="txtCard">
+              <p>Mont-Saint-Michel</p>
+              <p>
+              Audio guided tour of the Mont-Saint-Michel, day trip from Paris with luxury transportation
+              </p>
+              <p>180€</p>
+            </div>
           </div>
         </Slider>
       </div>

@@ -110,7 +110,7 @@
     3px 10px 12px rgba(0, 0, 0, 0.2);
     margin-bottom: 22vh;
     margin-top: 6vh;
-    text-align: center  ;
+    text-align: left;
 }
 .Cards:hover{
     /* box-shadow: 0px 7px 47px 2px #7E7E7E; */
@@ -121,7 +121,10 @@
 .CardImg{
     object-fit: contain;
 }
-
+.txtCard{
+    padding-left: 9%;
+    text-align: left;
+}
 .Section3{
     height: 24vh;
     width: 100vw;
