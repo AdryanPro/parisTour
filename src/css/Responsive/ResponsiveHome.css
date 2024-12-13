@@ -1,4 +1,7 @@
 @media screen and (max-width: 1000px) {
+    .ImageTemporaire{
+        max-width: 88vw;
+    }
     .HeaderBg{
         display: none;
     }
@@ -86,7 +89,9 @@
         margin: 0; /* Remove unnecessary margin */
         overflow: hidden; /* Prevent overflow of adjacent cards */
     }
-    
+    .slick-slide > div {
+        margin: 0 10px; /* Creates space between slides */
+    }
     /* Force each slide to take full width of the container */
     .slick-slide > div {
         width: 100%; /* Ensure card takes full width */
@@ -111,15 +116,19 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        padding: 20px 0; /* Adds padding to the section */
+        overflow: hidden; /* Hides overflowing content */
     }
     .ImageSlide {
-        margin: 0 15px; /* Adds horizontal gap between slides */
+        margin: 0 20px !important; /* Adds horizontal gap between slides */
         display: flex;
         justify-content: center;
         align-items: center;
     }
     .VanCarouselImg{
         min-width: 90vw;
+        border-radius: 10px; /* Optional: Adds some styling to the images */
+        object-fit: cover; /* Ensures the images scale nicely */
     }
     .VanBtn{
         min-width: 39vw;

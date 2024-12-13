@@ -1,7 +1,7 @@
 import React from 'react'
 import HeaderBg from '../assets/Images/homeImg.png'
 import HeaderBgMobile from '../assets/Images/homeImgMobile.png'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import '../css/HomeComponent.css'
 import '../css/Responsive/ResponsiveHome.css'
 import Dday from '../assets/Images/D-DayCardImg.png'
@@ -16,6 +16,11 @@ import VanCImg1 from '../assets/Images/VanCarousel/VanCImg1.png'
 import VanCImg2 from '../assets/Images/VanCarousel/VanCImg2.png'
 import VanCImg3 from '../assets/Images/VanCarousel/VanCImg3.png'
 export default function Home() {
+  const navigate = useNavigate(); // Always initialize navigate at the top of ur component
+  const handleClick = () => {
+    navigate('/Privatisation'); // Navigate to the desired route
+    window.scrollTo(0, 0); // Scroll to the top of the page
+  };
   const settings = {
     dots: true,
     infinite: true,
@@ -52,6 +57,24 @@ export default function Home() {
     autoplaySpeed: 2000,
     cssEase: "linear",
     arrows: false, // Disable arrows
+    centerMode: true, // Ensures the slides are centered
+    responsive: [
+      {
+        breakpoint: 1000, // Screen size below 1000px
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 768, // Below 768px
+        settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: true,
+        },
+      },
+    ],
   };
   return (
     <div className='HomeWrapper'>
@@ -134,7 +157,7 @@ export default function Home() {
               driver for the ultimate convenience and flexibility. Wherever you go, travel effortlessly with our 
               premier service.
             </p>
-            <button className="VanBtn" onClick={() => window.location.href = '/Privatisation'}>See more</button>
+            <button className="VanBtn" onClick={handleClick}>See more</button>
             
             <br/>
           </div>
@@ -144,7 +167,9 @@ export default function Home() {
             {/* Second Carousel */}
       <div className="ImageCarouselSection">
         <h1 className='h1VersailleVan'>Our Van :</h1>
-        <Slider {...imageCarouselSettings}>
+                        {/* On Pause replace by an Img for now */}
+        <img src={VanCImg1} className='ImageTemporaire' alt="Image de Van" />
+        {/* <Slider {...imageCarouselSettings}>
           <div className="ImageSlide">
             <img className='VanCarouselImg' src={VanCImg1} alt="Placeholder 1" />
           </div>
@@ -154,8 +179,8 @@ export default function Home() {
           <div className="ImageSlide">
             <img className='VanCarouselImg' src={VanCImg3} alt="Placeholder 3" />
           </div>
-        </Slider>
-        <button className='VanBtn'>Reserve</button>
+        </Slider> */}
+        <button onClick={handleClick} className='VanBtn'>Reserve</button>
       </div>
     </div>
   )
