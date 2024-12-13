@@ -6,6 +6,7 @@
         object-fit: cover;
         margin-top: 3vh;
         min-height: 79vh;
+        max-width: 100vw;
     }
     .H1Overlay{
     font-size: 2rem;
@@ -25,26 +26,29 @@
 
     .NavWrapper{
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: row;
-        position: absolute;
-        gap: 10px;
-        width: 60%;
-        top: 85%; /* Centers the text vertically */
-        left: 6%;
-    
+        flex-wrap: wrap; /* Allows items to wrap if needed */
+        justify-content: center; /* Centers the buttons horizontally */
+        align-items: center; /* Aligns the buttons vertically */
+        gap: 10px; /* Adds space between the buttons */
+        position: absolute; /* Keeps it positioned relative to the parent */
+        width: 100%; /* Full width to center align correctly */
+        top: calc(55% + 50px); /* Places it just below the textOverlay */
+        left: 0; /* Centers the container */
         text-align: center;
+        margin-top: 9vh;
+
     }
     .NavBarHeaderA{
         background-color: #C53073;
-        /* width: 254px; */
-        min-width: 34%;
+        min-width: 36%; /* Adjust width to keep buttons smaller and centered */
         height: 44px;
-        align-content: center;
         border-radius: 15px;
         text-decoration: none;
         color: white;
+        text-align: center;
+        display: flex; /* Ensures text inside the button is centered */
+        justify-content: center; /* Centers text horizontally */
+        align-items: center; /* Centers text vertically */
     }
     .TourSection {
         text-align: center; /* Center the heading */
@@ -118,9 +122,9 @@
         min-width: 90vw;
     }
     .VanBtn{
-        min-width: 90vw;
-        object-fit: contain;
+        min-width: 39vw;
         border-radius: 10px; /* Optional: Adds some styling to the images */
+        margin-top: 6vh;
     }
 }
 @media (min-width: 1001px) and (max-width: 1455px) {
