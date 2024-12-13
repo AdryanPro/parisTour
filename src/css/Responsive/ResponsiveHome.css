@@ -47,7 +47,8 @@
     }
     .Cards{
         box-shadow: none;
-        padding-bottom: 33px;
+        padding-bottom: 3px;
+        /* margin-bottom: 0 !important; */
     }    
     .Cards:hover{
         box-shadow: none;

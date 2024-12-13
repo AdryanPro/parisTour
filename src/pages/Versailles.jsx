@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import '../css/VersaillesComponent.css'
-// import '../css/Responsive/ResponsiveVersailles.css'
+import '../css/Responsive/ResponsiveVersailles.css'
 import VersaillesImg1 from '../assets/Images/VersaillesAssets/VersaillesImg1.png'
 import VersaillesImg2 from '../assets/Images/VersaillesAssets/VersaillesImg2.png'
 import VersaillesImg3 from '../assets/Images/VersaillesAssets/VersaillesImg3.png'
@@ -368,11 +368,11 @@ export default function Versailles() {
             
             {/* Show available times only if a date is selected */}
             {selectedDate && (
-              <div>
+              <div className='DepatureTimeDiv'>
                 <h3 className='VersaillesBuyCardH3'>Available Departure Times :</h3>
                 <select
-                  value={selectedTime}
                   className='TimeSelecteur'
+                  value={selectedTime}
                   onChange={(e) => setSelectedTime(e.target.value)}
                 >
                   <option value="">Select a time</option>
