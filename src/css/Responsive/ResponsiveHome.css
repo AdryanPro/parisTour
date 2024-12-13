@@ -188,7 +188,7 @@
         font-size: 6rem;
     }
     .textOverlay{
-        font-size: 2.9rem;
+        font-size: 1.5rem;
     }
     .HeaderBgMobile{
         display: none;
@@ -207,9 +207,10 @@
         display: none;
     }
     .Cards{
-        margin-bottom: 6vh;
-        max-height: 39vh;
-        min-height: 29vh;
+        margin-bottom: 9vh;
+        /* max-height: 59vh; */
+        min-height: 52vh;
+
 
     }
     .Cards:hover{
