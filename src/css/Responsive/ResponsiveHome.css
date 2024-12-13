@@ -210,8 +210,6 @@
         margin-bottom: 9vh;
         /* max-height: 59vh; */
         min-height: 52vh;
-
-
     }
     .Cards:hover{
         /* box-shadow: none; */
@@ -221,7 +219,7 @@
         margin-bottom: 3vh;
     }
   }
-@media (min-width: 2000px){
+@media (min-width: 1700px){
     .H1Overlay{
         font-size: 8.8rem;
     }
@@ -230,6 +228,11 @@
     }
     .NavBarHeaderA{
         font-size: 1.6rem;
+    }
+    .Cards{
+        margin-bottom: 9vh;
+        /* max-height: 59vh; */
+        min-height: 42vh;
     }
     .Section3H1{
         font-size: 3rem;
