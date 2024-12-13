@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import '../css/VersaillesComponent.css'
-import '../css/Responsive/ResponsiveVersailles.css'
+// import '../css/Responsive/ResponsiveVersailles.css'
 import VersaillesImg1 from '../assets/Images/VersaillesAssets/VersaillesImg1.png'
 import VersaillesImg2 from '../assets/Images/VersaillesAssets/VersaillesImg2.png'
 import VersaillesImg3 from '../assets/Images/VersaillesAssets/VersaillesImg3.png'
@@ -76,12 +76,8 @@ export default function Versailles() {
         alert("Please select both a date and a departure time before booking.");
         return;
       }
-      setIsPopupVisible(!isPopupVisible);
-      if (!isPopupVisible) {
-        document.body.classList.add("no-scroll");
-      } else {
-        document.body.classList.remove("no-scroll");
-      }
+      setIsPopupVisible((prev) => !prev);
+      document.body.classList.toggle("no-scroll", !isPopupVisible);
     };
     console.log('Popup Visibility:', isPopupVisible);
     //Set the price 
@@ -189,8 +185,6 @@ export default function Versailles() {
       prevIndex === 0 ? cards.length - 1 : prevIndex - 1
     );
   };
-  // console.log('Popup Visibility:', isPopupVisible);
-
   return (
     <div className="VersaillesWrapper">
       <div className="VersaillesHeader">
@@ -266,85 +260,79 @@ export default function Versailles() {
           )}
           {/* <p className='PaymentWarnning'>Payment are made in cash only at the meating point</p> */}
           <button className='VersaillesBuyCardBtn' onClick={togglePopup}>Book Now</button>
-          
-                              {/* Popup */}
-            {isPopupVisible && (
-              <div className='popupOverlayStyle FlexWrapper' style={popupOverlayStyle}>
-                <div className='popupContentStyle' style={popupContentStyle}>
-                  <h2 className='PopUpH1'>Check out</h2>
-                  <form onSubmit={handleSubmit} className='FormPopUp'>
-                    <div className='LabelInputDiv'>
-                    <label htmlFor="lastName" className='LabelPopUp' >First Name:</label><br />
-                      <input
-                        type="text"
-                        id="firstName"
-                        name="firstName"
-                        placeholder="Enter your first name"
-                        value={formData.firstName}
-                        onChange={handleInputChange}
-                        style={errors.firstName ? { border: '2px solid red' } : {}}
-                        className='InputPopUp'
-                      />
-                    </div>
-                    <div className='LabelInputDiv'>
-                      <label htmlFor="lastName" className='LabelPopUp' >Last Name:</label><br />
-                      <input
-                        type="text"
-                        id="lastName"
-                        name="lastName"
-                        placeholder="Enter your last name"
-                        value={formData.lastName}
-                        onChange={handleInputChange}
-                        style={errors.lastName ? { border: '2px solid red' } : {}}
-                        className='InputPopUp'
-                      />
-                    </div>
-                    <div className='LabelInputDiv'>
-                      <label htmlFor="phoneNumber" className='LabelPopUp'>Phone Number:</label><br />
-                      <input
-                        type="tel"
-                        id="phoneNumber"
-                        name="phoneNumber"
-                        placeholder="Enter your phone number"
-                        value={formData.phoneNumber}
-                        onChange={handleInputChange}
-                        style={errors.phoneNumber ? { border: '2px solid red' } : {}}
-                        className='InputPopUp'
-                      />
-                    </div>
-                    <div className='LabelInputDiv'>
-                      <label htmlFor="email" className='LabelPopUp'>Email:</label><br />
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="Enter your email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        style={errors.email ? { border: '2px solid red' } : {}}
-                        className='InputPopUp'
-                      />
-                        <p>You have selected the {formatDate(selectedDate)} at {selectedTime}</p>
-                        <p>Total :  {price * count}€</p>
-                    </div>
-                    
-                    <button type="submit" className='popupSubmitButton'>
-                      Submit
-                    </button>
-                    {/* <button type="button" onClick={togglePopup} className='popupCloseButton'>
-                      Close
-                    </button> */}
-                  </form>
-                  <button type="button" onClick={togglePopup} className='popupCloseButton'>
-                      Close
-                    </button>
-                  {/* <button onClick={togglePopup}>Close</button> */}
-                </div>
-              </div>
-            )}
         </div>
       </div>
-
+                                    {/* Popup PC */}
+      {isPopupVisible && (
+        <div className='popupOverlayStyle FlexWrapper' style={popupOverlayStyle}>
+          <div className='popupContentStyle' style={popupContentStyle}>
+            <h2 className='PopUpH1'>Check out</h2>
+            <form onSubmit={handleSubmit} className='FormPopUp'>
+                <div className='LabelInputDiv'>
+                  <label htmlFor="lastName" className='LabelPopUp' >First Name:</label><br />
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    placeholder="Enter your first name"
+                    value={formData.firstName}
+                    onChange={handleInputChange}
+                    style={errors.firstName ? { border: '2px solid red' } : {}}
+                    className='InputPopUp'
+                  />
+                </div>
+                <div className='LabelInputDiv'>
+                  <label htmlFor="lastName" className='LabelPopUp' >Last Name:</label><br />
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    placeholder="Enter your last name"
+                    value={formData.lastName}
+                    onChange={handleInputChange}
+                    style={errors.lastName ? { border: '2px solid red' } : {}}
+                    className='InputPopUp'
+                  />
+                </div>
+                <div className='LabelInputDiv'>
+                  <label htmlFor="phoneNumber" className='LabelPopUp'>Phone Number:</label><br />
+                  <input
+                    type="tel"
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    placeholder="Enter your phone number"
+                    value={formData.phoneNumber}
+                    onChange={handleInputChange}
+                    style={errors.phoneNumber ? { border: '2px solid red' } : {}}
+                    className='InputPopUp'
+                  />
+                </div>
+                <div className='LabelInputDiv'>
+                  <label htmlFor="email" className='LabelPopUp'>Email:</label><br />
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    style={errors.email ? { border: '2px solid red' } : {}}
+                    className='InputPopUp'
+                  />
+                    <p>You have selected the {formatDate(selectedDate)} at {selectedTime}</p>
+                    <p>Total :  {price * count}€</p>
+                </div>
+                  
+                  <button type="submit" className='popupSubmitButton'>
+                    Submit
+                  </button>
+            </form>
+            <button type="button" onClick={togglePopup} className='popupCloseButton'>
+                Close
+            </button>
+          </div>
+        </div>
+      )}
 
       <div className='VersaillesShowAndBuyMobileCard'>
         <div className="carrouselMobile">
@@ -404,82 +392,79 @@ export default function Versailles() {
             )}
           </div>
           <button className='VersaillesBuyCardBtnMobile' onClick={togglePopup}>Book Now</button>
-                              
-                              {/* Popup */}
-            {isPopupVisible && (
-              <div className='popupOverlayStyle FlexWrapper' style={popupOverlayStyle}>
-                <div className='popupContentStyle' style={popupContentStyle}>
-                  <h2 className='PopUpH1'>Check out</h2>
-                  <form onSubmit={handleSubmit} className='FormPopUp'>
-                    <div className='LabelInputDiv'>
-                    <label htmlFor="lastName" className='LabelPopUp' >First Name:</label><br />
-                      <input
-                        type="text"
-                        id="firstName"
-                        name="firstName"
-                        placeholder="Enter your first name"
-                        value={formData.firstName}
-                        onChange={handleInputChange}
-                        style={errors.firstName ? { border: '2px solid red' } : {}}
-                        className='InputPopUp'
-                      />
-                    </div>
-                    <div className='LabelInputDiv'>
-                      <label htmlFor="lastName" className='LabelPopUp' >Last Name:</label><br />
-                      <input
-                        type="text"
-                        id="lastName"
-                        name="lastName"
-                        placeholder="Enter your last name"
-                        value={formData.lastName}
-                        onChange={handleInputChange}
-                        style={errors.lastName ? { border: '2px solid red' } : {}}
-                        className='InputPopUp'
-                      />
-                    </div>
-                    <div className='LabelInputDiv'>
-                      <label htmlFor="phoneNumber" className='LabelPopUp'>Phone Number:</label><br />
-                      <input
-                        type="tel"
-                        id="phoneNumber"
-                        name="phoneNumber"
-                        placeholder="Enter your phone number"
-                        value={formData.phoneNumber}
-                        onChange={handleInputChange}
-                        style={errors.phoneNumber ? { border: '2px solid red' } : {}}
-                        className='InputPopUp'
-                      />
-                    </div>
-                    <div className='LabelInputDiv'>
-                      <label htmlFor="email" className='LabelPopUp'>Email:</label><br />
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="Enter your email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        style={errors.email ? { border: '2px solid red' } : {}}
-                        className='InputPopUp'
-                      />
-                        <p>You have selected the {formatDate(selectedDate)} at {selectedTime}</p>
-                        <p>Total :  {price * count}€</p>
-                    </div>
-                    
-                    <button type="submit" className='popupSubmitButton'>
-                      Submit
-                    </button>
-                    <button type="button" onClick={togglePopup} className='popupCloseButton'>
-                      Close
-                    </button>
-                  </form>
-                </div>
-              </div>
-            )}
-          
         </div>
       </div>
-
+                                    {/* Popup mobile */}
+      {isPopupVisible && (
+        <div className='popupOverlayStyle FlexWrapper' style={popupOverlayStyle}>
+          <div className='popupContentStyle' style={popupContentStyle}>
+            <h2 className='PopUpH1'>Check out</h2>
+            <form onSubmit={handleSubmit} className='FormPopUp'>
+              <div className='LabelInputDiv'>
+              <label htmlFor="lastName" className='LabelPopUp' >First Name:</label><br />
+                <input
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                  placeholder="Enter your first name"
+                  value={formData.firstName}
+                  onChange={handleInputChange}
+                  style={errors.firstName ? { border: '2px solid red' } : {}}
+                  className='InputPopUp'
+                />
+              </div>
+              <div className='LabelInputDiv'>
+                <label htmlFor="lastName" className='LabelPopUp' >Last Name:</label><br />
+                <input
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  placeholder="Enter your last name"
+                  value={formData.lastName}
+                  onChange={handleInputChange}
+                  style={errors.lastName ? { border: '2px solid red' } : {}}
+                  className='InputPopUp'
+                />
+              </div>
+              <div className='LabelInputDiv'>
+                <label htmlFor="phoneNumber" className='LabelPopUp'>Phone Number:</label><br />
+                <input
+                  type="tel"
+                  id="phoneNumber"
+                  name="phoneNumber"
+                  placeholder="Enter your phone number"
+                  value={formData.phoneNumber}
+                  onChange={handleInputChange}
+                  style={errors.phoneNumber ? { border: '2px solid red' } : {}}
+                  className='InputPopUp'
+                />
+              </div>
+              <div className='LabelInputDiv'>
+                <label htmlFor="email" className='LabelPopUp'>Email:</label><br />
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  style={errors.email ? { border: '2px solid red' } : {}}
+                  className='InputPopUp'
+                />
+                  <p>You have selected the {formatDate(selectedDate)} at {selectedTime}</p>
+                  <p>Total :  {price * count}€</p>
+              </div>
+              
+              <button type="submit" className='popupSubmitButton'>
+                Submit
+              </button>
+              <button type="button" onClick={togglePopup} className='popupCloseButton'>
+                Close
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
 
         <div className='VersaillesDescriptionSection'>
             <h2 className='VersaillesDescriptionH2'>Description</h2>
@@ -509,11 +494,10 @@ export default function Versailles() {
             <Link to='/Bruges' className='VersaillesLinkCard'>
               <div className='CardsVersailles'>
                   <img src={Bruges} className='VersaillesCardImg' alt="Bruges" />
-                  <h3>Bruges</h3>
+                  <h3 className='CardH3'>Bruges</h3>
                   <p className='CardVersaillesP'>
                     Often called the "Venice of the North", is a charming medieval city in Belgium renowned 
                     for its picturesque canals, cobblestone streets ... 
-                    
                   </p>
                   <p className='CardVersaillesP Price'>180€</p>
               </div>
@@ -536,6 +520,8 @@ export default function Versailles() {
                   <p className='CardVersaillesP'>
                     Audio guided tour of the Mont-Saint-Michel, day trip from Paris with luxury transportation
                   </p>
+                  <br />
+                  <br />
                   <p className='CardVersaillesP Price'>180€</p>
               </div>
             </Link>
