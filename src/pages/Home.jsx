@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import '../css/HomeComponent.css'
 import '../css/Responsive/ResponsiveHome.css'
 import Dday from '../assets/Images/D-DayCardImg.png'
-import Bruges from '../assets/Images/BrugesCardImg.png'
+import Bruges from '../assets/Images/BrugesAssets/BrugesImg1.png'
 import Versailles from '../assets/Images/VersaillesCardImg.png'
 import Mont from '../assets/Images/MontCardImg.png'
 import VanCard from '../assets/Images/VanCardImg.png'
@@ -158,7 +158,6 @@ export default function Home() {
               premier service.
             </p>
             <button className="VanBtn" onClick={handleClick}>See more</button>
-            
             <br/>
           </div>
         </div>
