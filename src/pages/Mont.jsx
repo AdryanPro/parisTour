@@ -184,22 +184,25 @@ export default function Mont() {
   return (
     <div className="MontWrapper">
       <div className="MontHeader">
-        <h1 className='MontHeaderH1' data-aos-duration="1400" data-aos="fade-down">
-          Audio Guided Tour to Mont Saint-Michel Day Trip from Paris <br/> 
-          with luxury coach transportation (group of 7 max)
+        <h1 className='MontHeaderH1' data-aos-duration="1400" data-aos="fade-down" >
+        Audio Guided Tour to Mont Saint-Michel Day Trip from Paris with luxury coach transportation 
+        (group of 7 max)
         </h1>
+        {/* <h1 className='MontHeaderMobileH1'>
+        Mont Tour from Paris (Audio guided Tour and Mont with Priority Access) with <br/>transportation (group of 7 max)
+        </h1> */}
       </div>
       <div className="MontShowAndBuy" data-aos-duration="1600" data-aos="fade-down" data-aos-delay="500">
         <div className="carrousel">
           <div className="item">
             <img src={slides[currentIndex]} alt={`Slide ${currentIndex + 1}`} className="MontImg" />
+            <button className='SliderImgBtnMont Prev' onClick={prevSlide}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="30px" width="30px" className='MontSvg'><path fill="#ffffff" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+            </button>
+            <button className='SliderImgBtnMont Next' onClick={nextSlide}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="30px" width="30px" className='MontSvg'><path fill="#ffffff" d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+            </button>
           </div>
-          <button className='SliderImgBtnMont Prev' onClick={prevSlide}>
-            {"<"}
-          </button>
-          <button className='SliderImgBtnMont Next' onClick={nextSlide}>
-            {">"}
-          </button>
         </div>
 
         <div className="MontPaymentCard" data-aos-duration="1600" data-aos="fade-down" data-aos-delay="1000">
@@ -253,97 +256,91 @@ export default function Mont() {
           )}
           {/* <p className='PaymentWarnning'>Payment are made in cash only at the meating point</p> */}
           <button className='MontBuyCardBtn' onClick={togglePopup}>Book Now</button>
-          
-                              {/* Popup */}
-            {isPopupVisible && (
-              <div className='popupOverlayStyle FlexWrapper' style={popupOverlayStyle}>
-                <div className='popupContentStyle' style={popupContentStyle}>
-                  <h2 className='PopUpH1'>Check out</h2>
-                  <form onSubmit={handleSubmit} className='FormPopUp'>
-                    <div className='LabelInputDiv'>
-                    <label htmlFor="lastName" className='LabelPopUp' >First Name:</label><br />
-                      <input
-                        type="text"
-                        id="firstName"
-                        name="firstName"
-                        placeholder="Enter your first name"
-                        value={formData.firstName}
-                        onChange={handleInputChange}
-                        style={errors.firstName ? { border: '2px solid red' } : {}}
-                        className='InputPopUp'
-                      />
-                    </div>
-                    <div className='LabelInputDiv'>
-                      <label htmlFor="lastName" className='LabelPopUp' >Last Name:</label><br />
-                      <input
-                        type="text"
-                        id="lastName"
-                        name="lastName"
-                        placeholder="Enter your last name"
-                        value={formData.lastName}
-                        onChange={handleInputChange}
-                        style={errors.lastName ? { border: '2px solid red' } : {}}
-                        className='InputPopUp'
-                      />
-                    </div>
-                    <div className='LabelInputDiv'>
-                      <label htmlFor="phoneNumber" className='LabelPopUp'>Phone Number:</label><br />
-                      <input
-                        type="tel"
-                        id="phoneNumber"
-                        name="phoneNumber"
-                        placeholder="Enter your phone number"
-                        value={formData.phoneNumber}
-                        onChange={handleInputChange}
-                        style={errors.phoneNumber ? { border: '2px solid red' } : {}}
-                        className='InputPopUp'
-                      />
-                    </div>
-                    <div className='LabelInputDiv'>
-                      <label htmlFor="email" className='LabelPopUp'>Email:</label><br />
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="Enter your email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        style={errors.email ? { border: '2px solid red' } : {}}
-                        className='InputPopUp'
-                      />
-                        <p>You have selected the {formatDate(selectedDate)} at {selectedTime}</p>
-                        <p>Total :  {price * count}€</p>
-                    </div>
-                    
-                    <button type="submit" className='popupSubmitButton'>
-                      Submit
-                    </button>
-                    {/* <button type="button" onClick={togglePopup} className='popupCloseButton'>
-                      Close
-                    </button> */}
-                  </form>
-                  <button type="button" onClick={togglePopup} className='popupCloseButton'>
-                      Close
-                    </button>
-                  {/* <button onClick={togglePopup}>Close</button> */}
-                </div>
-              </div>
-            )}
         </div>
       </div>
-      
+                                    {/* Popup PC */}
+      {isPopupVisible && (
+        <div className='popupOverlayStyle FlexWrapper' style={popupOverlayStyle}>
+          <div className='popupContentStyle' style={popupContentStyle}>
+            <h2 className='PopUpH1'>Check out</h2>
+            <form onSubmit={handleSubmit} className='FormPopUp'>
+                <div className='LabelInputDiv'>
+                  <label htmlFor="lastName" className='LabelPopUp' >First Name:</label><br />
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    placeholder="Enter your first name"
+                    value={formData.firstName}
+                    onChange={handleInputChange}
+                    style={errors.firstName ? { border: '2px solid red' } : {}}
+                    className='InputPopUp'
+                  />
+                </div>
+                <div className='LabelInputDiv'>
+                  <label htmlFor="lastName" className='LabelPopUp' >Last Name:</label><br />
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    placeholder="Enter your last name"
+                    value={formData.lastName}
+                    onChange={handleInputChange}
+                    style={errors.lastName ? { border: '2px solid red' } : {}}
+                    className='InputPopUp'
+                  />
+                </div>
+                <div className='LabelInputDiv'>
+                  <label htmlFor="phoneNumber" className='LabelPopUp'>Phone Number:</label><br />
+                  <input
+                    type="tel"
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    placeholder="Enter your phone number"
+                    value={formData.phoneNumber}
+                    onChange={handleInputChange}
+                    style={errors.phoneNumber ? { border: '2px solid red' } : {}}
+                    className='InputPopUp'
+                  />
+                </div>
+                <div className='LabelInputDiv'>
+                  <label htmlFor="email" className='LabelPopUp'>Email:</label><br />
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    style={errors.email ? { border: '2px solid red' } : {}}
+                    className='InputPopUp'
+                  />
+                    <p>You have selected the {formatDate(selectedDate)} at {selectedTime}</p>
+                    <p>Total :  {price * count}€</p>
+                </div>
+                  
+                  <button type="submit" className='popupSubmitButton'>
+                    Submit
+                  </button>
+            </form>
+            <button type="button" onClick={togglePopup} className='popupCloseButton'>
+                Close
+            </button>
+          </div>
+        </div>
+      )}
 
       <div className='MontShowAndBuyMobileCard'>
         <div className="carrouselMobile">
           <div className="item">
             <img src={slidesMobile[currentIndex]} alt={`Slide ${currentIndex + 1}`} className="MontMobileCarouselSlide" />
-          </div>
-          <button className='SliderImgBtnMont Prev' onClick={prevSlide}>
+            <button className='SliderImgBtnMontMobile PrevMobile' onClick={prevSlide}>
             {"<"}
-          </button>
-          <button className='SliderImgBtnMont Next' onClick={nextSlide}>
-            {">"}
-          </button>
+            </button>
+            <button className='SliderImgBtnMontMobile NextMobile' onClick={nextSlide}>
+              {">"}
+            </button>
+          </div>
         </div>
         <div className="MontMobileCardShowAndBuyTxt">
           <p className='MobileCardTitle'>Number of  People :</p>
@@ -367,11 +364,11 @@ export default function Mont() {
             
             {/* Show available times only if a date is selected */}
             {selectedDate && (
-              <div>
+              <div className='DepatureTimeDiv'>
                 <h3 className='MontBuyCardH3'>Available Departure Times :</h3>
                 <select
-                  value={selectedTime}
                   className='TimeSelecteur'
+                  value={selectedTime}
                   onChange={(e) => setSelectedTime(e.target.value)}
                 >
                   <option value="">Select a time</option>
@@ -391,147 +388,143 @@ export default function Mont() {
             )}
           </div>
           <button className='MontBuyCardBtnMobile' onClick={togglePopup}>Book Now</button>
-                              
-                              {/* Popup */}
-            {isPopupVisible && (
-              <div className='popupOverlayStyle FlexWrapper' style={popupOverlayStyle}>
-                <div className='popupContentStyle' style={popupContentStyle}>
-                  <h2 className='PopUpH1'>Check out</h2>
-                  <form onSubmit={handleSubmit} className='FormPopUp'>
-                    <div className='LabelInputDiv'>
-                    <label htmlFor="lastName" className='LabelPopUp' >First Name:</label><br />
-                      <input
-                        type="text"
-                        id="firstName"
-                        name="firstName"
-                        placeholder="Enter your first name"
-                        value={formData.firstName}
-                        onChange={handleInputChange}
-                        style={errors.firstName ? { border: '2px solid red' } : {}}
-                        className='InputPopUp'
-                      />
-                    </div>
-                    <div className='LabelInputDiv'>
-                      <label htmlFor="lastName" className='LabelPopUp' >Last Name:</label><br />
-                      <input
-                        type="text"
-                        id="lastName"
-                        name="lastName"
-                        placeholder="Enter your last name"
-                        value={formData.lastName}
-                        onChange={handleInputChange}
-                        style={errors.lastName ? { border: '2px solid red' } : {}}
-                        className='InputPopUp'
-                      />
-                    </div>
-                    <div className='LabelInputDiv'>
-                      <label htmlFor="phoneNumber" className='LabelPopUp'>Phone Number:</label><br />
-                      <input
-                        type="tel"
-                        id="phoneNumber"
-                        name="phoneNumber"
-                        placeholder="Enter your phone number"
-                        value={formData.phoneNumber}
-                        onChange={handleInputChange}
-                        style={errors.phoneNumber ? { border: '2px solid red' } : {}}
-                        className='InputPopUp'
-                      />
-                    </div>
-                    <div className='LabelInputDiv'>
-                      <label htmlFor="email" className='LabelPopUp'>Email:</label><br />
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="Enter your email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        style={errors.email ? { border: '2px solid red' } : {}}
-                        className='InputPopUp'
-                      />
-                        <p>You have selected the {formatDate(selectedDate)} at {selectedTime}</p>
-                        <p>Total :  {price * count}€</p>
-                    </div>
-                    
-                    <button type="submit" className='popupSubmitButton'>
-                      Submit
-                    </button>
-                    <button type="button" onClick={togglePopup} className='popupCloseButton'>
-                      Close
-                    </button>
-                  </form>
-                </div>
-              </div>
-            )}
-          
         </div>
       </div>
-
-      <div className='MontDescriptionSection'>
-          <h2 className='MontDescriptionH2'>Description</h2>
-          <div className="MontDescriptionCrard">
-            <ul>
-              <li>Duration : 14h</li>
-              <li>See the Mont-Saint-Michel and the Abbaye (tickets included)</li>
-              <li>Luxury van Transportation, pick-up at your hotel (more than 4 pers)</li>
-              <li>Audio-guide</li>
-            </ul>
+                                    {/* Popup mobile */}
+      {isPopupVisible && (
+        <div className='popupOverlayStyle FlexWrapper' style={popupOverlayStyle}>
+          <div className='popupContentStyle' style={popupContentStyle}>
+            <h2 className='PopUpH1'>Check out</h2>
+            <form onSubmit={handleSubmit} className='FormPopUp'>
+              <div className='LabelInputDiv'>
+              <label htmlFor="lastName" className='LabelPopUp' >First Name:</label><br />
+                <input
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                  placeholder="Enter your first name"
+                  value={formData.firstName}
+                  onChange={handleInputChange}
+                  style={errors.firstName ? { border: '2px solid red' } : {}}
+                  className='InputPopUp'
+                />
+              </div>
+              <div className='LabelInputDiv'>
+                <label htmlFor="lastName" className='LabelPopUp' >Last Name:</label><br />
+                <input
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  placeholder="Enter your last name"
+                  value={formData.lastName}
+                  onChange={handleInputChange}
+                  style={errors.lastName ? { border: '2px solid red' } : {}}
+                  className='InputPopUp'
+                />
+              </div>
+              <div className='LabelInputDiv'>
+                <label htmlFor="phoneNumber" className='LabelPopUp'>Phone Number:</label><br />
+                <input
+                  type="tel"
+                  id="phoneNumber"
+                  name="phoneNumber"
+                  placeholder="Enter your phone number"
+                  value={formData.phoneNumber}
+                  onChange={handleInputChange}
+                  style={errors.phoneNumber ? { border: '2px solid red' } : {}}
+                  className='InputPopUp'
+                />
+              </div>
+              <div className='LabelInputDiv'>
+                <label htmlFor="email" className='LabelPopUp'>Email:</label><br />
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  style={errors.email ? { border: '2px solid red' } : {}}
+                  className='InputPopUp'
+                />
+                  <p>You have selected the {formatDate(selectedDate)} at {selectedTime}</p>
+                  <p>Total :  {price * count}€</p>
+              </div>
+              
+              <button type="submit" className='popupSubmitButton'>
+                Submit
+              </button>
+              <button type="button" onClick={togglePopup} className='popupCloseButton'>
+                Close
+              </button>
+            </form>
           </div>
-          <h2 className='MontDescriptionH2'>Embark on a Customizable Day Trip Between Sea and Sky!</h2>
-          <p className='MontDescriptionP'>
-          Design your own itinerary as you visit one of France's most iconic landmarks, the stunning 
-          Mont Saint-Michel and its bay, a UNESCO World Heritage site. Explore the magnificent medieval 
-          abbey perched atop the island, a true historical masterpiece. Experience the magic of the island 
-          and witness the breathtaking views of the Bay of Mont Saint-Michel, shaped by the ever-changing tides.
-          Depart at 7:15 AM from the heart of Paris for an unforgettable day at Mont Saint-Michel. Enjoy the scenic 
-          bus ride as you pass through the lush Normandy countryside. During the journey, listen to engaging 
-          commentary from our audio guide on your phone. Arrive at Mont Saint-Michel around noon, ready for an 
-          incredible experience.
-          </p>
-      </div>
-
-      <div className="YouMayAlsoLikeMontSection">
-        <h2 className='YouMayAlsoLikeMontH2'>You may also like</h2>
-        <div className="MontCardWrapperYouMayAlsoLike">
-          <Link to='/Versailles' className='MontLinkCard'>
-            <div className='CardsMont'>
-                <img src={Versailles} className='MontCardImg' alt="Versailles" />
-                <p className='CardMontP'>
-                The Palace of Versailles, a symbol of opulence and grandeur, is a UNESCO World 
-                Heritage site located near Paris, France. Once the royal residence of Louis XIV, 
-                it dazzles with its gilded halls, the iconic Hall of Mirrors, and sprawling, meticulously 
-                landscaped gardens.
-                </p>
-                <p className='CardMontP Price'>115€</p>
-            </div>
-          </Link>
-          <Link to='/D-Day' className='MontLinkCard'>
-              <div className='CardsVersailles'>
-                  <img src={Dday} className='VersaillesCardImg' alt="Dday" />
-                  <p className='CardVersaillesP'>
-                      The D-Day beaches in Normandy, France, are historic sites where Allied forces landed on 
-                      June 6, 1944, marking a pivotal moment in World War II. These beaches, now serene and 
-                      dotted with memorials and museums, stand as solemn reminders of the bravery and sacrifice 
-                      that changed the course of history.
-                  </p>
-                  <p className='CardVersaillesP Price'>250€</p>
-              </div>
-          </Link>
-
-          <Link to='/Bruges' className='MontLinkCard'>
-            <div className='CardsMont'>
-                  <img src={Bruges} className='VersaillesCardImg' alt="Dday" />
-                  <p className='CardVersaillesP'>
-                    Often called the "Venice of the North," is a charming medieval city in Belgium renowned 
-                    for its picturesque canals, cobblestone streets ... 
-                    A UNESCO World Heritage Site, it offers visitors a blend of cultural history, vibrant 
-                    markets, and indulgent Belgian chocolate and beer experiences.
-                  </p>
-                  <p className='CardVersaillesP Price'>180€</p>
-              </div>
-          </Link>
-
         </div>
+      )}
+
+        <div className='MontDescriptionSection'>
+            <h2 className='MontDescriptionH2'>Description</h2>
+            <div className="MontDescriptionCrard">
+              <ul>
+                <li>Duration : 14h(Flexible is necessary)</li>
+                <li>See the Mont-Saint-Michel and the Abbaye (tickets included)</li>
+                <li>Luxury van Transportation, pick-up at your hotel (4 pers or more)</li>
+                <li>Audio-guide</li>
+              </ul>
+            </div>
+            <h2 className='MontDescriptionTitleH2'>Embark on a Customizable Day Trip Between Sea and Sky!</h2>
+            <p className='MontDescriptionP'>
+            Design your own itinerary as you visit one of France's most iconic landmarks,
+            the stunning Mont Saint-Michel and its bay, a UNESCO World Heritage site. Explore
+            the magnificent medieval abbey perched atop the island, a true historical masterpiece.
+            Experience the magic of the island and witness the breathtaking views of the Bay of
+            Mont Saint-Michel, shaped by the ever-changing tides.
+            Depart at 7:15 AM from the heart of Paris for an unforgettable day at Mont
+            Saint-Michel. Enjoy the scenic bus ride as you pass through the lush Normandy countryside.
+            During the journey, listen to engaging commentary from our audio guide on your phone. Arrive at
+            Mont Saint-Michel around noon, ready for an incredible experience.
+            </p>
+        </div>
+
+
+        <div className="YouMayAlsoLikeMontSection">
+          <h2 className='YouMayAlsoLikeMontH2'>You may also like</h2>
+          <div className="MontCardWrapperYouMayAlsoLike">
+            <Link to='/Bruges' className='MontLinkCard'>
+              <div className='CardsMont'>
+                  <img src={Bruges} className='MontCardImg' alt="Bruges" />
+                  <h3 className='CardH3'>Bruges</h3>
+                  <p className='CardMontP'>
+                    Often called the "Venice of the North", is a charming medieval city in Belgium renowned 
+                    for its picturesque canals, cobblestone streets ... 
+                  </p>
+                  <p className='CardMontP Price'>180€</p>
+              </div>
+            </Link>
+            <Link to='/D-Day' className='MontLinkCard'>
+              <div className='CardsMont'>
+                  <img src={Dday} className='MontCardImg' alt="Dday" />
+                  <h3 className='CardH3'>D-day</h3>
+                  <p className='CardMontP'>
+                    The D-Day beaches in Normandy, France, are the historic sites of the Allied landings on June 6, 1944, a decisive moment in World War II
+                  </p>
+                  <p className='CardMontP Price'>250€</p>
+              </div>
+            </Link>
+
+            <Link to='/Versailles' className='MontLinkCard'>
+              <div className='CardsMont'>
+                  <img src={Versailles} className='MontCardImg' alt="Versailles" />
+                  <p className='CardMontP'>
+                  The Palace of Versailles, a symbol of opulence and grandeur, is a UNESCO World 
+                  Heritage site located near Paris, France. Once the royal residence of Louis XIV, 
+                  it dazzles with its gilded halls, the iconic Hall of Mirrors, and sprawling, meticulously 
+                  landscaped gardens.
+                  </p>
+                  <p className='CardMontP Price'>115€</p>
+              </div>
+            </Link>
+          </div>
       </div>
 
       <div className="YouMayAlsoLikeMobile">

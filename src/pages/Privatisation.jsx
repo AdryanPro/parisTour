@@ -166,6 +166,13 @@ export default function Privatisation() {
       price: "180€",
       p:'L’Essentiel de Versailles (Visite d’une demie- journée du chateaux de Versailles avec Acces Priotitaire'
     },
+    {
+      link: "/Versailles",
+      image: Versailles,
+      title: "Versailles",
+      price: "100€",
+      p: 'The Palace of Versailles, a symbol of opulence and grandeur, is a UNESCO World Heritage site located near Paris, France. Once the royal residence of Louis XIV, it dazzles with its gilded halls, the iconic Hall of Mirrors, and sprawling, meticulously landscaped gardens.'
+    },
   ];
 
   const [currentCarouselIndex, setCurrentCarouselIndex] = useState(0);

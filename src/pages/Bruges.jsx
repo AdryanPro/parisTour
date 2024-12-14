@@ -178,26 +178,25 @@ export default function Bruges() {
       prevIndex === 0 ? cards.length - 1 : prevIndex - 1
     );
   };
-
   return (
     <div className="BrugesWrapper">
       <div className="BrugesHeader">
-        <h1 className='BrugesHeaderH1' data-aos-duration="1400" data-aos="fade-down">
-          Transport from Paris to Bruges Day Trip and Audio Guided Tour <br/>
-          in a small group (1-7)
+        <h1 className='BrugesHeaderH1' data-aos-duration="1400" data-aos="fade-down" >
+        Transport from Paris to Bruges Day Trip and Audio Guided Tour
+        in a small group (1-7)
         </h1>
       </div>
       <div className="BrugesShowAndBuy" data-aos-duration="1600" data-aos="fade-down" data-aos-delay="500">
         <div className="carrousel">
           <div className="item">
             <img src={slides[currentIndex]} alt={`Slide ${currentIndex + 1}`} className="BrugesImg" />
+            <button className='SliderImgBtnBruges Prev' onClick={prevSlide}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="30px" width="30px" className='BrugesSvg'><path fill="#ffffff" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+            </button>
+            <button className='SliderImgBtnBruges Next' onClick={nextSlide}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="30px" width="30px" className='BrugesSvg'><path fill="#ffffff" d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+            </button>
           </div>
-          <button className='SliderImgBtnBruges Prev' onClick={prevSlide}>
-            {"<"}
-          </button>
-          <button className='SliderImgBtnBruges Next' onClick={nextSlide}>
-            {">"}
-          </button>
         </div>
 
         <div className="BrugesPaymentCard" data-aos-duration="1600" data-aos="fade-down" data-aos-delay="1000">
@@ -251,96 +250,91 @@ export default function Bruges() {
           )}
           {/* <p className='PaymentWarnning'>Payment are made in cash only at the meating point</p> */}
           <button className='BrugesBuyCardBtn' onClick={togglePopup}>Book Now</button>
-          
-                              {/* Popup */}
-            {isPopupVisible && (
-              <div className='popupOverlayStyle FlexWrapper' style={popupOverlayStyle}>
-                <div className='popupContentStyle' style={popupContentStyle}>
-                  <h2 className='PopUpH1'>Check out</h2>
-                  <form onSubmit={handleSubmit} className='FormPopUp'>
-                    <div className='LabelInputDiv'>
-                    <label htmlFor="lastName" className='LabelPopUp' >First Name:</label><br />
-                      <input
-                        type="text"
-                        id="firstName"
-                        name="firstName"
-                        placeholder="Enter your first name"
-                        value={formData.firstName}
-                        onChange={handleInputChange}
-                        style={errors.firstName ? { border: '2px solid red' } : {}}
-                        className='InputPopUp'
-                      />
-                    </div>
-                    <div className='LabelInputDiv'>
-                      <label htmlFor="lastName" className='LabelPopUp' >Last Name:</label><br />
-                      <input
-                        type="text"
-                        id="lastName"
-                        name="lastName"
-                        placeholder="Enter your last name"
-                        value={formData.lastName}
-                        onChange={handleInputChange}
-                        style={errors.lastName ? { border: '2px solid red' } : {}}
-                        className='InputPopUp'
-                      />
-                    </div>
-                    <div className='LabelInputDiv'>
-                      <label htmlFor="phoneNumber" className='LabelPopUp'>Phone Number:</label><br />
-                      <input
-                        type="tel"
-                        id="phoneNumber"
-                        name="phoneNumber"
-                        placeholder="Enter your phone number"
-                        value={formData.phoneNumber}
-                        onChange={handleInputChange}
-                        style={errors.phoneNumber ? { border: '2px solid red' } : {}}
-                        className='InputPopUp'
-                      />
-                    </div>
-                    <div className='LabelInputDiv'>
-                      <label htmlFor="email" className='LabelPopUp'>Email:</label><br />
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="Enter your email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        style={errors.email ? { border: '2px solid red' } : {}}
-                        className='InputPopUp'
-                      />
-                        <p>You have selected the {formatDate(selectedDate)} at {selectedTime}</p>
-                        <p>Total :  {price * count}€</p>
-                    </div>
-                    
-                    <button type="submit" className='popupSubmitButton'>
-                      Submit
-                    </button>
-                    {/* <button type="button" onClick={togglePopup} className='popupCloseButton'>
-                      Close
-                    </button> */}
-                  </form>
-                  <button type="button" onClick={togglePopup} className='popupCloseButton'>
-                      Close
-                    </button>
-                  {/* <button onClick={togglePopup}>Close</button> */}
-                </div>
-              </div>
-            )}
         </div>
       </div>
+                                    {/* Popup PC */}
+      {isPopupVisible && (
+        <div className='popupOverlayStyle FlexWrapper' style={popupOverlayStyle}>
+          <div className='popupContentStyle' style={popupContentStyle}>
+            <h2 className='PopUpH1'>Check out</h2>
+            <form onSubmit={handleSubmit} className='FormPopUp'>
+                <div className='LabelInputDiv'>
+                  <label htmlFor="lastName" className='LabelPopUp' >First Name:</label><br />
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    placeholder="Enter your first name"
+                    value={formData.firstName}
+                    onChange={handleInputChange}
+                    style={errors.firstName ? { border: '2px solid red' } : {}}
+                    className='InputPopUp'
+                  />
+                </div>
+                <div className='LabelInputDiv'>
+                  <label htmlFor="lastName" className='LabelPopUp' >Last Name:</label><br />
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    placeholder="Enter your last name"
+                    value={formData.lastName}
+                    onChange={handleInputChange}
+                    style={errors.lastName ? { border: '2px solid red' } : {}}
+                    className='InputPopUp'
+                  />
+                </div>
+                <div className='LabelInputDiv'>
+                  <label htmlFor="phoneNumber" className='LabelPopUp'>Phone Number:</label><br />
+                  <input
+                    type="tel"
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    placeholder="Enter your phone number"
+                    value={formData.phoneNumber}
+                    onChange={handleInputChange}
+                    style={errors.phoneNumber ? { border: '2px solid red' } : {}}
+                    className='InputPopUp'
+                  />
+                </div>
+                <div className='LabelInputDiv'>
+                  <label htmlFor="email" className='LabelPopUp'>Email:</label><br />
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    style={errors.email ? { border: '2px solid red' } : {}}
+                    className='InputPopUp'
+                  />
+                    <p>You have selected the {formatDate(selectedDate)} at {selectedTime}</p>
+                    <p>Total :  {price * count}€</p>
+                </div>
+                  
+                  <button type="submit" className='popupSubmitButton'>
+                    Submit
+                  </button>
+            </form>
+            <button type="button" onClick={togglePopup} className='popupCloseButton'>
+                Close
+            </button>
+          </div>
+        </div>
+      )}
 
       <div className='BrugesShowAndBuyMobileCard'>
         <div className="carrouselMobile">
           <div className="item">
             <img src={slidesMobile[currentIndex]} alt={`Slide ${currentIndex + 1}`} className="BrugesMobileCarouselSlide" />
-          </div>
-          <button className='SliderImgBtnBruges Prev' onClick={prevSlide}>
+            <button className='SliderImgBtnBrugesMobile PrevMobile' onClick={prevSlide}>
             {"<"}
-          </button>
-          <button className='SliderImgBtnBruges Next' onClick={nextSlide}>
-            {">"}
-          </button>
+            </button>
+            <button className='SliderImgBtnBrugesMobile NextMobile' onClick={nextSlide}>
+              {">"}
+            </button>
+          </div>
         </div>
         <div className="BrugesMobileCardShowAndBuyTxt">
           <p className='MobileCardTitle'>Number of  People :</p>
@@ -364,11 +358,11 @@ export default function Bruges() {
             
             {/* Show available times only if a date is selected */}
             {selectedDate && (
-              <div>
+              <div className='DepatureTimeDiv'>
                 <h3 className='BrugesBuyCardH3'>Available Departure Times :</h3>
                 <select
-                  value={selectedTime}
                   className='TimeSelecteur'
+                  value={selectedTime}
                   onChange={(e) => setSelectedTime(e.target.value)}
                 >
                   <option value="">Select a time</option>
@@ -388,147 +382,143 @@ export default function Bruges() {
             )}
           </div>
           <button className='BrugesBuyCardBtnMobile' onClick={togglePopup}>Book Now</button>
-                              
-                              {/* Popup */}
-            {isPopupVisible && (
-              <div className='popupOverlayStyle FlexWrapper' style={popupOverlayStyle}>
-                <div className='popupContentStyle' style={popupContentStyle}>
-                  <h2 className='PopUpH1'>Check out</h2>
-                  <form onSubmit={handleSubmit} className='FormPopUp'>
-                    <div className='LabelInputDiv'>
-                    <label htmlFor="lastName" className='LabelPopUp' >First Name:</label><br />
-                      <input
-                        type="text"
-                        id="firstName"
-                        name="firstName"
-                        placeholder="Enter your first name"
-                        value={formData.firstName}
-                        onChange={handleInputChange}
-                        style={errors.firstName ? { border: '2px solid red' } : {}}
-                        className='InputPopUp'
-                      />
-                    </div>
-                    <div className='LabelInputDiv'>
-                      <label htmlFor="lastName" className='LabelPopUp' >Last Name:</label><br />
-                      <input
-                        type="text"
-                        id="lastName"
-                        name="lastName"
-                        placeholder="Enter your last name"
-                        value={formData.lastName}
-                        onChange={handleInputChange}
-                        style={errors.lastName ? { border: '2px solid red' } : {}}
-                        className='InputPopUp'
-                      />
-                    </div>
-                    <div className='LabelInputDiv'>
-                      <label htmlFor="phoneNumber" className='LabelPopUp'>Phone Number:</label><br />
-                      <input
-                        type="tel"
-                        id="phoneNumber"
-                        name="phoneNumber"
-                        placeholder="Enter your phone number"
-                        value={formData.phoneNumber}
-                        onChange={handleInputChange}
-                        style={errors.phoneNumber ? { border: '2px solid red' } : {}}
-                        className='InputPopUp'
-                      />
-                    </div>
-                    <div className='LabelInputDiv'>
-                      <label htmlFor="email" className='LabelPopUp'>Email:</label><br />
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="Enter your email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        style={errors.email ? { border: '2px solid red' } : {}}
-                        className='InputPopUp'
-                      />
-                        <p>You have selected the {formatDate(selectedDate)} at {selectedTime}</p>
-                        <p>Total :  {price * count}€</p>
-                    </div>
-                    
-                    <button type="submit" className='popupSubmitButton'>
-                      Submit
-                    </button>
-                    <button type="button" onClick={togglePopup} className='popupCloseButton'>
-                      Close
-                    </button>
-                  </form>
-                </div>
+        </div>
+      </div>
+                                    {/* Popup mobile */}
+      {isPopupVisible && (
+        <div className='popupOverlayStyle FlexWrapper' style={popupOverlayStyle}>
+          <div className='popupContentStyle' style={popupContentStyle}>
+            <h2 className='PopUpH1'>Check out</h2>
+            <form onSubmit={handleSubmit} className='FormPopUp'>
+              <div className='LabelInputDiv'>
+              <label htmlFor="lastName" className='LabelPopUp' >First Name:</label><br />
+                <input
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                  placeholder="Enter your first name"
+                  value={formData.firstName}
+                  onChange={handleInputChange}
+                  style={errors.firstName ? { border: '2px solid red' } : {}}
+                  className='InputPopUp'
+                />
               </div>
-            )}
-          
-        </div>
-      </div>
-
-      <div className='BrugesDescriptionSection'>
-          <h2 className='BrugesDescriptionH2'>Description</h2>
-          <div className="BrugesDescriptionCrard">
-            <ul>
-              <li>Visit the historic city, classified as a world heritage site by UNESCO</li>
-              <li>Duration 14h</li>
-              <li>Luxury van Transportation, pick-up at your hotel (more than 4 pers)</li>
-              <li>Audio-guide</li>
-            </ul>
+              <div className='LabelInputDiv'>
+                <label htmlFor="lastName" className='LabelPopUp' >Last Name:</label><br />
+                <input
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  placeholder="Enter your last name"
+                  value={formData.lastName}
+                  onChange={handleInputChange}
+                  style={errors.lastName ? { border: '2px solid red' } : {}}
+                  className='InputPopUp'
+                />
+              </div>
+              <div className='LabelInputDiv'>
+                <label htmlFor="phoneNumber" className='LabelPopUp'>Phone Number:</label><br />
+                <input
+                  type="tel"
+                  id="phoneNumber"
+                  name="phoneNumber"
+                  placeholder="Enter your phone number"
+                  value={formData.phoneNumber}
+                  onChange={handleInputChange}
+                  style={errors.phoneNumber ? { border: '2px solid red' } : {}}
+                  className='InputPopUp'
+                />
+              </div>
+              <div className='LabelInputDiv'>
+                <label htmlFor="email" className='LabelPopUp'>Email:</label><br />
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  style={errors.email ? { border: '2px solid red' } : {}}
+                  className='InputPopUp'
+                />
+                  <p>You have selected the {formatDate(selectedDate)} at {selectedTime}</p>
+                  <p>Total :  {price * count}€</p>
+              </div>
+              
+              <button type="submit" className='popupSubmitButton'>
+                Submit
+              </button>
+              <button type="button" onClick={togglePopup} className='popupCloseButton'>
+                Close
+              </button>
+            </form>
           </div>
-          <h2 className='BrugesDescriptionH2'>Explore Bruges, the "Venice of the North," at Your Own Pace</h2>
-          <p className='BrugesDescriptionP'>
-            Depart at 7:15 a.m. from Paris in a comfortable, air-conditioned bus, arriving in Bruges by 11:00 a.m. 
-            Begin your visit by exploring the city and enjoying a lunch of traditional Belgian cuisine, like 
-            moules-frites or waffles. Discover Bruges’s UNESCO-listed medieval center with an audio guide, strolling 
-            through picturesque streets and admiring landmarks such as the Belfry, Church of Our Lady, and the 
-            Beguinage. You can also visit museums or enjoy a canal cruise (not included).
-             The bus departs at 4:30 p.m., returning to Paris around 9:00 p.m
-          </p>
-      </div>
-
-
-      <div className="YouMayAlsoLikeBrugesSection">
-        <h2 className='YouMayAlsoLikeBrugesH2'>You may also like</h2>
-        <div className="BrugesCardWrapperYouMayAlsoLike">
-          <Link to='/Versailles' className='BrugesLinkCard'>
-            <div className='CardsBruges'>
-                <img src={Versailles} className='BrugesCardImg' alt="Versailles" />
-                <p className='CardBrugesP'>
-                The Palace of Versailles, a symbol of opulence and grandeur, is a UNESCO World 
-                Heritage site located near Paris, France. Once the royal residence of Louis XIV, 
-                it dazzles with its gilded halls, the iconic Hall of Mirrors, and sprawling, meticulously 
-                landscaped gardens.
-                </p>
-                <p className='CardBrugesP Price'>100€</p>
-            </div>
-          </Link>
-          <Link to='/D-Day' className='BrugesLinkCard'>
-            <div className='CardsBruges'>
-                <img src={Dday} className='BrugesCardImg' alt="Dday" />
-                <p className='CardBrugesP'>
-                      The D-Day beaches in Normandy, France, are historic sites where Allied forces landed on 
-                      June 6, 1944, marking a pivotal moment in World War II. These beaches, now serene and 
-                      dotted with memorials and museums, stand as solemn reminders of the bravery and sacrifice 
-                      that changed the course of history.
-                  </p>
-                <p className='CardBrugesP Price'>250€</p>
-            </div>
-          </Link>
-
-          <Link to='/Mont-Saint-Michel' className='BrugesLinkCard'>
-            <div className='CardsBruges'>
-                <img src={Mont} className='BrugesCardImg' alt="Mont" />
-                <p className='CardVersaillesP'>
-                  Mont Saint-Michel, a breathtaking medieval abbey perched atop a rocky island, 
-                  is one of France's most iconic landmarks. Surrounded by dramatic tidal waters, 
-                  it seamlessly blends natural beauty with architectural grandeur, offering an 
-                  unforgettable experience.
-                  </p>
-                <p className='CardBrugesP Price'>180€</p>
-            </div>
-          </Link>
         </div>
-      </div>
+      )}
 
+        <div className='BrugesDescriptionSection'>
+            <h2 className='BrugesDescriptionH2'>Description</h2>
+            <div className="BrugesDescriptionCrard">
+              <ul>
+                <li>Visit the historic city, classified as a world heritage site by UNESCO</li>
+                <li>Duration 14h (Flexible hours)</li>
+                <li>Luxury van Transportation, pick-up at your hotel (more than 4 pers)</li>
+                <li>Audio-guide</li>
+              </ul>
+            </div>
+            <h2 className='BrugesDescriptionTitleH2'>Explore Bruges, the "Venice of the North," at Your Own Pace</h2>
+            <p className='BrugesDescriptionP'>
+              Depart at 7:15 a.m. from Paris in a comfortable, air-conditioned bus,
+              arriving in Bruges by 11:00 a.m. Begin your visit by exploring the city
+              and enjoying a lunch of traditional Belgian cuisine, like moules-frites or waffles.
+              Discover Bruges’s UNESCO-listed medieval center with an audio guide, strolling
+              through picturesque streets and admiring landmarks such as the Belfry, Church
+              of Our Lady, and the Beguinage. You can also visit museums or enjoy a canal
+              cruise (not included).
+              The bus departs at 4:30 p.m., returning to Paris around 9:00 p.m
+            </p>
+        </div>
+
+
+        <div className="YouMayAlsoLikeBrugesSection">
+          <h2 className='YouMayAlsoLikeBrugesH2'>You may also like</h2>
+          <div className="BrugesCardWrapperYouMayAlsoLike">
+            <Link to='/Bruges' className='BrugesLinkCard'>
+              <div className='CardsBruges'>
+                  <img src={Bruges} className='BrugesCardImg' alt="Bruges" />
+                  <h3 className='CardH3'>Bruges</h3>
+                  <p className='CardBrugesP'>
+                    Often called the "Venice of the North", is a charming medieval city in Belgium renowned 
+                    for its picturesque canals, cobblestone streets ... 
+                  </p>
+                  <p className='CardBrugesP Price'>180€</p>
+              </div>
+            </Link>
+            <Link to='/D-Day' className='BrugesLinkCard'>
+              <div className='CardsBruges'>
+                  <img src={Dday} className='BrugesCardImg' alt="Dday" />
+                  <h3 className='CardH3'>D-day</h3>
+                  <p className='CardBrugesP'>
+                    The D-Day beaches in Normandy, France, are the historic sites of the Allied landings on June 6, 1944, a decisive moment in World War II
+                  </p>
+                  <p className='CardBrugesP Price'>250€</p>
+              </div>
+            </Link>
+
+            <Link to='/Mont-Saint-Michel' className='BrugesLinkCard'>
+              <div className='CardsBruges'>
+                  <img src={Mont} className='BrugesCardImg' alt="Mont" />
+                  <h3 className='CardH3'>Mont-Saint-Michel</h3>
+                  <p className='CardBrugesP'>
+                    Audio guided tour of the Mont-Saint-Michel, day trip from Paris with luxury transportation
+                  </p>
+                  <br />
+                  <br />
+                  <p className='CardBrugesP Price'>180€</p>
+              </div>
+            </Link>
+          </div>
+      </div>
 
       <div className="YouMayAlsoLikeMobile">
         <h2 className="YouMayAlsoLikeMobileH2">You may also like</h2>
@@ -578,4 +568,4 @@ const popupContentStyle = {
   borderRadius: "10px",
   textAlign: "center",
   overflow: "hidden",
-};
+}

@@ -1,4 +1,10 @@
 /* Privatisation */
+@media (max-width: 599px) {
+    .PrivatisationDescriptionTitleH2{
+        margin-left: 6vw;
+        margin-right: 6vw;
+    }
+}
 @media (min-width: 600px) and (max-width: 860px) {
     .MobileCardTitle{
         margin-top: 9vh;
