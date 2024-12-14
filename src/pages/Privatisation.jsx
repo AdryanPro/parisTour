@@ -179,25 +179,29 @@ export default function Privatisation() {
       prevIndex === 0 ? cards.length - 1 : prevIndex - 1
     );
   };
-
+  Privatisation
   return (
     <div className="PrivatisationWrapper">
       <div className="PrivatisationHeader">
-        <h1 className='PrivatisationHeaderH1' data-aos-duration="1400" data-aos="fade-down">
-        Availability of our vehicles with a driver according <br/> to your needs
+        <h1 className='PrivatisationHeaderH1' data-aos-duration="1400" data-aos="fade-down" >
+        Privatisation Tour from Paris (Audio guided Tour of the Palace and  the gardens of 
+        Privatisation with Priority Access) with transportation (group of 7 max)
         </h1>
+        {/* <h1 className='PrivatisationHeaderMobileH1'>
+        Privatisation Tour from Paris (Audio guided Tour and Privatisation with Priority Access) with <br/>transportation (group of 7 max)
+        </h1> */}
       </div>
       <div className="PrivatisationShowAndBuy" data-aos-duration="1600" data-aos="fade-down" data-aos-delay="500">
         <div className="carrousel">
           <div className="item">
             <img src={slides[currentIndex]} alt={`Slide ${currentIndex + 1}`} className="PrivatisationImg" />
+            <button className='SliderImgBtnPrivatisation Prev' onClick={prevSlide}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="30px" width="30px" className='PrivatisationSvg'><path fill="#ffffff" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+            </button>
+            <button className='SliderImgBtnPrivatisation Next' onClick={nextSlide}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="30px" width="30px" className='PrivatisationSvg'><path fill="#ffffff" d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+            </button>
           </div>
-          <button className='SliderImgBtnPrivatisation Prev' onClick={prevSlide}>
-            {"<"}
-          </button>
-          <button className='SliderImgBtnPrivatisation Next' onClick={nextSlide}>
-            {">"}
-          </button>
         </div>
 
         <div className="PrivatisationPaymentCard" data-aos-duration="1600" data-aos="fade-down" data-aos-delay="1000">
@@ -245,102 +249,97 @@ export default function Privatisation() {
             <p className='PrivatisationCountP'>{count}</p>
             <button onClick={increment} className='PrivatisationBtnCounter'>+</button>
           </div>
-          <h3 className='PrivatisationBuyCardH3'>Total : {price}€</h3>
+          <h3 className='PrivatisationBuyCardH3'>Total : {price * count}€</h3>
           {selectedDate && selectedTime && (
             <p className='PaymentWarnning'>Payments are made in cash only at the meeting point.</p>
           )}
           {/* <p className='PaymentWarnning'>Payment are made in cash only at the meating point</p> */}
           <button className='PrivatisationBuyCardBtn' onClick={togglePopup}>Book Now</button>
-          
-                              {/* Popup */}
-            {isPopupVisible && (
-              <div className='popupOverlayStyle FlexWrapper' style={popupOverlayStyle}>
-                <div className='popupContentStyle' style={popupContentStyle}>
-                  <h2 className='PopUpH1'>Check out</h2>
-                  <form onSubmit={handleSubmit} className='FormPopUp'>
-                    <div className='LabelInputDiv'>
-                    <label htmlFor="lastName" className='LabelPopUp' >First Name:</label><br />
-                      <input
-                        type="text"
-                        id="firstName"
-                        name="firstName"
-                        placeholder="Enter your first name"
-                        value={formData.firstName}
-                        onChange={handleInputChange}
-                        style={errors.firstName ? { border: '2px solid red' } : {}}
-                        className='InputPopUp'
-                      />
-                    </div>
-                    <div className='LabelInputDiv'>
-                      <label htmlFor="lastName" className='LabelPopUp' >Last Name:</label><br />
-                      <input
-                        type="text"
-                        id="lastName"
-                        name="lastName"
-                        placeholder="Enter your last name"
-                        value={formData.lastName}
-                        onChange={handleInputChange}
-                        style={errors.lastName ? { border: '2px solid red' } : {}}
-                        className='InputPopUp'
-                      />
-                    </div>
-                    <div className='LabelInputDiv'>
-                      <label htmlFor="phoneNumber" className='LabelPopUp'>Phone Number:</label><br />
-                      <input
-                        type="tel"
-                        id="phoneNumber"
-                        name="phoneNumber"
-                        placeholder="Enter your phone number"
-                        value={formData.phoneNumber}
-                        onChange={handleInputChange}
-                        style={errors.phoneNumber ? { border: '2px solid red' } : {}}
-                        className='InputPopUp'
-                      />
-                    </div>
-                    <div className='LabelInputDiv'>
-                      <label htmlFor="email" className='LabelPopUp'>Email:</label><br />
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="Enter your email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        style={errors.email ? { border: '2px solid red' } : {}}
-                        className='InputPopUp'
-                      />
-                        <p>You have selected the {formatDate(selectedDate)} at {selectedTime}</p>
-                        <p>Total :  {price * count}€</p>
-                    </div>
-                    
-                    <button type="submit" className='popupSubmitButton'>
-                      Submit
-                    </button>
-                    {/* <button type="button" onClick={togglePopup} className='popupCloseButton'>
-                      Close
-                    </button> */}
-                  </form>
-                  <button type="button" onClick={togglePopup} className='popupCloseButton'>
-                      Close
-                    </button>
-                  {/* <button onClick={togglePopup}>Close</button> */}
-                </div>
-              </div>
-            )}
         </div>
       </div>
+                                    {/* Popup PC */}
+      {isPopupVisible && (
+        <div className='popupOverlayStyle FlexWrapper' style={popupOverlayStyle}>
+          <div className='popupContentStyle' style={popupContentStyle}>
+            <h2 className='PopUpH1'>Check out</h2>
+            <form onSubmit={handleSubmit} className='FormPopUp'>
+                <div className='LabelInputDiv'>
+                  <label htmlFor="lastName" className='LabelPopUp' >First Name:</label><br />
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    placeholder="Enter your first name"
+                    value={formData.firstName}
+                    onChange={handleInputChange}
+                    style={errors.firstName ? { border: '2px solid red' } : {}}
+                    className='InputPopUp'
+                  />
+                </div>
+                <div className='LabelInputDiv'>
+                  <label htmlFor="lastName" className='LabelPopUp' >Last Name:</label><br />
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    placeholder="Enter your last name"
+                    value={formData.lastName}
+                    onChange={handleInputChange}
+                    style={errors.lastName ? { border: '2px solid red' } : {}}
+                    className='InputPopUp'
+                  />
+                </div>
+                <div className='LabelInputDiv'>
+                  <label htmlFor="phoneNumber" className='LabelPopUp'>Phone Number:</label><br />
+                  <input
+                    type="tel"
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    placeholder="Enter your phone number"
+                    value={formData.phoneNumber}
+                    onChange={handleInputChange}
+                    style={errors.phoneNumber ? { border: '2px solid red' } : {}}
+                    className='InputPopUp'
+                  />
+                </div>
+                <div className='LabelInputDiv'>
+                  <label htmlFor="email" className='LabelPopUp'>Email:</label><br />
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    style={errors.email ? { border: '2px solid red' } : {}}
+                    className='InputPopUp'
+                  />
+                    <p>You have selected the {formatDate(selectedDate)} at {selectedTime}</p>
+                    <p>Total :  {price * count}€</p>
+                </div>
+                  
+                  <button type="submit" className='popupSubmitButton'>
+                    Submit
+                  </button>
+            </form>
+            <button type="button" onClick={togglePopup} className='popupCloseButton'>
+                Close
+            </button>
+          </div>
+        </div>
+      )}
 
       <div className='PrivatisationShowAndBuyMobileCard'>
         <div className="carrouselMobile">
           <div className="item">
             <img src={slidesMobile[currentIndex]} alt={`Slide ${currentIndex + 1}`} className="PrivatisationMobileCarouselSlide" />
-          </div>
-          <button className='SliderImgBtnPrivatisation Prev' onClick={prevSlide}>
+            <button className='SliderImgBtnPrivatisationMobile PrevMobile' onClick={prevSlide}>
             {"<"}
-          </button>
-          <button className='SliderImgBtnPrivatisation Next' onClick={nextSlide}>
-            {">"}
-          </button>
+            </button>
+            <button className='SliderImgBtnPrivatisationMobile NextMobile' onClick={nextSlide}>
+              {">"}
+            </button>
+          </div>
         </div>
         <div className="PrivatisationMobileCardShowAndBuyTxt">
           <p className='MobileCardTitle'>Number of  People :</p>
@@ -364,11 +363,11 @@ export default function Privatisation() {
             
             {/* Show available times only if a date is selected */}
             {selectedDate && (
-              <div>
+              <div className='DepatureTimeDiv'>
                 <h3 className='PrivatisationBuyCardH3'>Available Departure Times :</h3>
                 <select
-                  value={selectedTime}
                   className='TimeSelecteur'
+                  value={selectedTime}
                   onChange={(e) => setSelectedTime(e.target.value)}
                 >
                   <option value="">Select a time</option>
@@ -388,130 +387,142 @@ export default function Privatisation() {
             )}
           </div>
           <button className='PrivatisationBuyCardBtnMobile' onClick={togglePopup}>Book Now</button>
-                              
-                              {/* Popup */}
-            {isPopupVisible && (
-              <div className='popupOverlayStyle FlexWrapper' style={popupOverlayStyle}>
-                <div className='popupContentStyle' style={popupContentStyle}>
-                  <h2 className='PopUpH1'>Check out</h2>
-                  <form onSubmit={handleSubmit} className='FormPopUp'>
-                    <div className='LabelInputDiv'>
-                    <label htmlFor="lastName" className='LabelPopUp' >First Name:</label><br />
-                      <input
-                        type="text"
-                        id="firstName"
-                        name="firstName"
-                        placeholder="Enter your first name"
-                        value={formData.firstName}
-                        onChange={handleInputChange}
-                        style={errors.firstName ? { border: '2px solid red' } : {}}
-                        className='InputPopUp'
-                      />
-                    </div>
-                    <div className='LabelInputDiv'>
-                      <label htmlFor="lastName" className='LabelPopUp' >Last Name:</label><br />
-                      <input
-                        type="text"
-                        id="lastName"
-                        name="lastName"
-                        placeholder="Enter your last name"
-                        value={formData.lastName}
-                        onChange={handleInputChange}
-                        style={errors.lastName ? { border: '2px solid red' } : {}}
-                        className='InputPopUp'
-                      />
-                    </div>
-                    <div className='LabelInputDiv'>
-                      <label htmlFor="phoneNumber" className='LabelPopUp'>Phone Number:</label><br />
-                      <input
-                        type="tel"
-                        id="phoneNumber"
-                        name="phoneNumber"
-                        placeholder="Enter your phone number"
-                        value={formData.phoneNumber}
-                        onChange={handleInputChange}
-                        style={errors.phoneNumber ? { border: '2px solid red' } : {}}
-                        className='InputPopUp'
-                      />
-                    </div>
-                    <div className='LabelInputDiv'>
-                      <label htmlFor="email" className='LabelPopUp'>Email:</label><br />
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="Enter your email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        style={errors.email ? { border: '2px solid red' } : {}}
-                        className='InputPopUp'
-                      />
-                        <p>You have selected the {formatDate(selectedDate)} at {selectedTime}</p>
-                        <p>Total :  {price * count}€</p>
-                    </div>
-                    
-                    <button type="submit" className='popupSubmitButton'>
-                      Submit
-                    </button>
-                    <button type="button" onClick={togglePopup} className='popupCloseButton'>
-                      Close
-                    </button>
-                  </form>
-                </div>
-              </div>
-            )}
-          
         </div>
+      </div>
+                                    {/* Popup mobile */}
+      {isPopupVisible && (
+        <div className='popupOverlayStyle FlexWrapper' style={popupOverlayStyle}>
+          <div className='popupContentStyle' style={popupContentStyle}>
+            <h2 className='PopUpH1'>Check out</h2>
+            <form onSubmit={handleSubmit} className='FormPopUp'>
+              <div className='LabelInputDiv'>
+              <label htmlFor="lastName" className='LabelPopUp' >First Name:</label><br />
+                <input
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                  placeholder="Enter your first name"
+                  value={formData.firstName}
+                  onChange={handleInputChange}
+                  style={errors.firstName ? { border: '2px solid red' } : {}}
+                  className='InputPopUp'
+                />
+              </div>
+              <div className='LabelInputDiv'>
+                <label htmlFor="lastName" className='LabelPopUp' >Last Name:</label><br />
+                <input
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  placeholder="Enter your last name"
+                  value={formData.lastName}
+                  onChange={handleInputChange}
+                  style={errors.lastName ? { border: '2px solid red' } : {}}
+                  className='InputPopUp'
+                />
+              </div>
+              <div className='LabelInputDiv'>
+                <label htmlFor="phoneNumber" className='LabelPopUp'>Phone Number:</label><br />
+                <input
+                  type="tel"
+                  id="phoneNumber"
+                  name="phoneNumber"
+                  placeholder="Enter your phone number"
+                  value={formData.phoneNumber}
+                  onChange={handleInputChange}
+                  style={errors.phoneNumber ? { border: '2px solid red' } : {}}
+                  className='InputPopUp'
+                />
+              </div>
+              <div className='LabelInputDiv'>
+                <label htmlFor="email" className='LabelPopUp'>Email:</label><br />
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  style={errors.email ? { border: '2px solid red' } : {}}
+                  className='InputPopUp'
+                />
+                  <p>You have selected the {formatDate(selectedDate)} at {selectedTime}</p>
+                  <p>Total :  {price * count}€</p>
+              </div>
+              
+              <button type="submit" className='popupSubmitButton'>
+                Submit
+              </button>
+              <button type="button" onClick={togglePopup} className='popupCloseButton'>
+                Close
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
+
+        <div className='PrivatisationDescriptionSection'>
+            <h2 className='PrivatisationDescriptionH2'>Description</h2>
+            <div className="PrivatisationDescriptionCrard">
+              <ul>
+                <li>Duration : as you want half-day, full-day just contact us</li>
+                <li>See the palace and all the gardens</li>
+                <li>Luxury van Transportation, pick-up at your hotel (more than 4 pers)</li>
+                <li>Audio-guide</li>
+              </ul>
+            </div>
+            <h2 className='PrivatisationDescriptionTitleH2'>Experience the Best of Privatisation !</h2>
+            <p className='PrivatisationDescriptionP'>
+            The Palace of Privatisation, a UNESCO World Heritage site, served as the residence of French monarchs 
+            Louis XIV, Louis XV, and Louis XVI, along with their courts, from 1682 until the French Revolution 
+            in 1789. Through your personal headset, you’ll hear insightful commentary from your guide, allowing 
+            you to discover the grandeur of Privatisation, a true symbol of royal power. Its Baroque architecture, 
+            exquisite artworks, and fine furnishings were crafted by the greatest artisans of the time. After your 
+            guided tour, take the time to wander through the breathtaking French-style gardens at your leisure.
+            </p>
+        </div>
+
+
+        <div className="YouMayAlsoLikePrivatisationSection">
+          <h2 className='YouMayAlsoLikePrivatisationH2'>You may also like</h2>
+          <div className="PrivatisationCardWrapperYouMayAlsoLike">
+            <Link to='/Bruges' className='PrivatisationLinkCard'>
+              <div className='CardsPrivatisation'>
+                  <img src={Bruges} className='PrivatisationCardImg' alt="Bruges" />
+                  <h3 className='CardH3'>Bruges</h3>
+                  <p className='CardPrivatisationP'>
+                    Often called the "Venice of the North", is a charming medieval city in Belgium renowned 
+                    for its picturesque canals, cobblestone streets ... 
+                  </p>
+                  <p className='CardPrivatisationP Price'>180€</p>
+              </div>
+            </Link>
+            <Link to='/D-Day' className='PrivatisationLinkCard'>
+              <div className='CardsPrivatisation'>
+                  <img src={Dday} className='PrivatisationCardImg' alt="Dday" />
+                  <h3 className='CardH3'>D-day</h3>
+                  <p className='CardPrivatisationP'>
+                    The D-Day beaches in Normandy, France, are the historic sites of the Allied landings on June 6, 1944, a decisive moment in World War II
+                  </p>
+                  <p className='CardPrivatisationP Price'>250€</p>
+              </div>
+            </Link>
+
+            <Link to='/Mont-Saint-Michel' className='PrivatisationLinkCard'>
+              <div className='CardsPrivatisation'>
+                  <img src={Mont} className='PrivatisationCardImg' alt="Mont" />
+                  <h3 className='CardH3'>Mont-Saint-Michel</h3>
+                  <p className='CardPrivatisationP'>
+                    Audio guided tour of the Mont-Saint-Michel, day trip from Paris with luxury transportation
+                  </p>
+                  <br />
+                  <br />
+                  <p className='CardPrivatisationP Price'>180€</p>
+              </div>
+            </Link>
+          </div>
       </div>
 
-      <div className='PrivatisationDescriptionSection'>
-          <h2 className='PrivatisationDescriptionH2'>Description</h2>
-          <div className="PrivatisationDescriptionCrard">
-            <ul>
-              <li>Driver at your availability </li>
-              <li>Schedule to suit your preference</li>
-              <li>Luxury van Transportation mercedes class V</li>
-              <li>English speaking driver</li>
-            </ul>
-          </div>
-          <h2 className='PrivatisationDescriptionH2'>Private Van with Chauffeur</h2>
-          <p className='PrivatisationDescriptionP'>
-          Enjoy the luxury and comfort of our Mercedes van, complete with a professional 
-          chauffeur at your service. Ideal for personalized trips or private transportation, 
-          this exclusive offer provides a smooth and stress-free experience tailored to your needs. 
-          Perfect for full-day excursions or special events.
-          </p>
-      </div>
-      <div className="YouMayAlsoLikePrivatisationSection">
-        <h2 className='YouMayAlsoLikePrivatisationH2'>You may also like</h2>
-        <div className="PrivatisationCardWrapperYouMayAlsoLike">
-          <Link to='/Versailles' className='PrivatisationLinkCard'>
-            <div className='CardsPrivatisation'>
-                <img src={Versailles} className='PrivatisationCardImg' alt="Versailles" />
-                <p className='CardPrivatisationP'>
-                L’Essentiel de Versailles Visite d’une demie- journée du chateaux de Versailles avec Acces Priotitaire
-                </p>
-                <p className='CardPrivatisationP Price'>115€</p>
-            </div>
-          </Link>
-          <Link to='/Mont-Saint-Michel' className='PrivatisationLinkCard'>
-            <div className='CardsPrivatisation'>
-                <img src={Mont} className='PrivatisationCardImg' alt="Mont" />
-                <p className='CardPrivatisationP'>
-                Audio guided tour of the Mont-Saint-Michel, day trip from Paris with luxury transportation
-                </p>
-                <p className='CardPrivatisationP Price'>180€</p>
-            </div>
-          </Link>
-          <Link to='/D-Day' className='BrugesLinkCard'>
-            <div className='CardsBruges'>
-                <img src={Dday} className='BrugesCardImg' alt="Privatisation" />
-                <p className='CardBrugesP'>D-DAY</p>
-                <p className='CardBrugesP Price'>250€</p>
-            </div>
-          </Link>
-        </div>
-      </div>
       <div className="YouMayAlsoLikeMobile">
         <h2 className="YouMayAlsoLikeMobileH2">You may also like</h2>
         <div className="carousel-container">
@@ -560,5 +571,4 @@ const popupContentStyle = {
   borderRadius: "10px",
   textAlign: "center",
   overflow: "hidden",
-};
-
+}

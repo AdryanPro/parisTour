@@ -3,11 +3,17 @@
     .MobileCardTitle{
         margin-top: 9vh;
     }
+    .VersaillesDescriptionTitleH2{
+        margin-left: 6vw;
+    }
   }
   
   @media (min-width: 861px) and (max-width: 1200px) {
     .MobileCardTitle{
         margin-top: 22%;
+    }
+    .VersaillesDescriptionTitleH2{
+        margin-left: 6vw;
     }
 }
 
