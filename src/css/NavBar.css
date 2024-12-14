@@ -67,6 +67,7 @@
     padding: 0;
     margin: 0;
     gap: 3rem;
+    height: 100%; /* Ensures items are vertically centered within NavBarWrapper */
 }
 
 .NavMenu.Open {
@@ -86,7 +87,6 @@
 
 .NavLi {
     list-style: none;
-    margin-bottom: 1.5rem; /* Adds spacing between items */
 }
 
 .NavLink {
@@ -96,6 +96,9 @@
     font-weight: bold;
     transition: transform 0.3s, color 0.3s ease;
     margin-right: 3vw;
+    display: flex;
+    align-items: center;
+    height: 100%; /* Ensures the links are vertically centered */
 }
 
 .NavLink:hover {
