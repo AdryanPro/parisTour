@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import '../css/VanComponent.css'
 import '../css/Responsive/ResponsivePrivatisation.css'
 import Dday from '../assets/Images/D-DayCardImg.png'
-import Bruges from '../assets/Images/BrugesAssets/BrugesImg1.png'
+import Bruges from '../assets/Images/BrugesCardImg.png'
 import Versailles from '../assets/Images/VersaillesCardImg.png' 
 import Mont from '../assets/Images/MontCardImg.png'
 import VanImg1 from '../assets/Images/VanRental/VanImg1.png'
@@ -75,7 +75,7 @@ export default function Privatisation() {
     setIsPopupVisible(!isPopupVisible);
   };
   //Set the price 
-  const price = 1250;
+  const price = 2050;
 
   const [formData, setFormData] = useState({
     firstName: '',
@@ -256,7 +256,7 @@ export default function Privatisation() {
             <p className='PrivatisationCountP'>{count}</p>
             <button onClick={increment} className='PrivatisationBtnCounter'>+</button>
           </div>
-          <h3 className='PrivatisationBuyCardH3'>Total : {price * count}€</h3>
+          <h3 className='PrivatisationBuyCardH3'>Total : {price}€</h3>
           {selectedDate && selectedTime && (
             <p className='PaymentWarnning'>Payments are made in cash only at the meeting point.</p>
           )}
@@ -322,7 +322,7 @@ export default function Privatisation() {
                     className='InputPopUp'
                   />
                     <p>You have selected the {formatDate(selectedDate)} at {selectedTime}</p>
-                    <p>Total :  {price * count}€</p>
+                    <p>Total :  {price}€</p>
                 </div>
                   
                   <button type="submit" className='popupSubmitButton'>
@@ -355,7 +355,7 @@ export default function Privatisation() {
             <p className='PrivatisationCountP'>{count}</p>
             <button onClick={increment} className='PrivatisationBtnCounter'>+</button>
           </div>
-          <p className='MobileCardP'>{price * count}€</p>
+          <p className='MobileCardP'>{price}€</p>
           <div className='PrivatisationMobileDateTime'>
             <h3 className='PrivatisationBuyCardH3'>Chose a date :</h3>
             <form>
@@ -454,7 +454,7 @@ export default function Privatisation() {
                   className='InputPopUp'
                 />
                   <p>You have selected the {formatDate(selectedDate)} at {selectedTime}</p>
-                  <p>Total :  {price * count}€</p>
+                  <p>Total :  {price}€</p>
               </div>
               
               <button type="submit" className='popupSubmitButton'>

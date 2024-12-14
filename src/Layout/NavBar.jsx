@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import Logo from '../assets/Images/LogoParisTour.png';
+import Logo from '../assets/Images/ParisToursLogo.png';
+import GrayLineLogo from '../assets/Images/LogoParisTour.png'
 import { Link } from 'react-router-dom';
 import '../css/NavBar.css';
 
@@ -17,6 +18,7 @@ export default function NavBar() {
   return (
     <div className='MainNavWrapper'>
       <nav className='NavBarWrapper'>
+        <img src={GrayLineLogo} alt="logo" className='GrayLineLogo' />
         <Link to="/">
           <img src={Logo} alt="logo" className='Logo' />
         </Link>
