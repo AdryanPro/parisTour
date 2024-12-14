@@ -8,7 +8,7 @@ import MontImg4 from '../assets/Images/MontAssets/MontImg4.png'
 import MontImg5 from '../assets/Images/MontAssets/MontImg5.png'
 import { Link } from 'react-router-dom'
 import emailjs from 'emailjs-com';
-import Bruges from '../assets/Images/BrugesAssets/BrugesImg1.png'
+import Bruges from '../assets/Images/BrugesCardImg.png'
 import Versailles from '../assets/Images/VersaillesCardImg.png' 
 import Dday from '../assets/Images/D-DayCardImg.png'
 import AOS from 'aos';

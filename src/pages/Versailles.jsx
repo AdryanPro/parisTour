@@ -7,7 +7,7 @@ import VersaillesImg3 from '../assets/Images/VersaillesAssets/VersaillesImg3.png
 import VersaillesImg4 from '../assets/Images/VersaillesAssets/VersaillesImg4.png'
 import Dday from '../assets/Images/D-DayCardImg.png'
 import Mont from '../assets/Images/MontCardImg.png'
-import Bruges from '../assets/Images/BrugesAssets/BrugesImg1.png'
+import Bruges from '../assets/Images/BrugesCardImg.png'
 import { Link } from 'react-router-dom'
 import emailjs from 'emailjs-com';
 import AOS from 'aos';
