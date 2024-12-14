@@ -160,8 +160,8 @@ font-size: 1.3rem;
   background-color: #f3f3f3;
   border-radius: 10px;
   transition: all 0.5s;
-  width: 1928% !important;
-  min-height: 42px !important;
+  min-width: 68vw;
+  min-height: 46px;
 }
 .VersaillesBuyCardBtn{
 background-color: #C53073;

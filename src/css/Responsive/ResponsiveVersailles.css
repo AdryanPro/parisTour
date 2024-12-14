@@ -1,4 +1,16 @@
 /* RESPONSIVE START HERE */
+@media (min-width: 600px) and (max-width: 860px) {
+    .MobileCardTitle{
+        margin-top: 9vh;
+    }
+  }
+  
+  @media (min-width: 861px) and (max-width: 1200px) {
+    .MobileCardTitle{
+        margin-top: 22%;
+    }
+}
+
 @media (max-width: 1200px) {
   .VersaillesHeader{
       position: static;
@@ -10,15 +22,12 @@
       color: aliceblue;
       align-content: center;
       text-align: left;
-      /* padding-left: 5vw;
-      padding-right: 5vw;
-      padding-bottom: 9vh; */
       max-width: 100%;
       /* display: none; */
   }
   .VersaillesHeaderH1{
       padding-top: 6vh;
-      font-size: 2.3rem;
+      font-size: 1.3rem;
   }
   .VersaillesShowAndBuy{
       display: none;
@@ -36,26 +45,48 @@
       margin-top: 8vh;
   }
   .carrouselMobile{
-      max-width: 18vw;
-      max-height: 416px;
-      margin-top: 0;
-      margin-right: 0;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
+    position: relative; /* To allow absolutely positioned children */
+    display: flex;
+    align-items: center; /* Center align the content vertically */
+    justify-content: center; /* Center align the content horizontally */
+    min-width: 100%; /* Ensure it spans the container width */
+    min-height: 100%;
+    margin-top: 0;
+    margin-right: 0;
+  }
+  .item{
+    display: flex;
+    align-items: center; /* Center align the content vertically */
+    justify-content: center; /* Center align the content horizontally */
   }
   .VersaillesMobileCarouselSlide{
-      /* max-height: 48vh;
-      min-width: 100vw; */
-      margin: 0;
-      padding: 0;
-      width: 500%;
-      min-height: 180% !important;
+      min-width: 100%;
       object-fit: contain;
-      margin-bottom: 3vh;
   }
-  .SliderImgBtnVersailles {
+  .SliderImgBtnVersaillesMobile{
+    position: absolute; /* Position the buttons relative to carrouselMobile */
+    top: 50%; /* Vertically center on the carousel */
+    transform: translateY(-50%); /* Adjust to ensure true centering */
+    background-color: #C53073;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 10;
+  }
+  .PrevMobile {
+    left: 3% !important; /* Adjust as needed */
+    top: 62% !important;
+  }
+  /* Place the Next button on the right */
+  .NextMobile {
+    right: 3% !important; /* Adjust as needed */
+    top: 62% !important; 
+  }
+  /* .SliderImgBtnVersailles {
       position: absolute;
       background-color: #C53073;
       color: white;
@@ -74,8 +105,7 @@
   .Prev{
       margin-left: 33vw !important;
       margin-bottom: 8vh;
-
-  }
+  } */
   .MobileCardP{
       margin: 0px;
   }
@@ -101,8 +131,11 @@
       border-radius: 10px;
       transition: all 0.5s;
   }
+  .VersaillesBtnCounter{
+    align-items: center;
+  }
   .TimeSelecteur{
-      min-width:72vw;
+      min-width: 93% !important;
       text-align: center;
       border: 2px solid transparent;
       height: 2.5em;
@@ -157,12 +190,15 @@
   }
   .VersaillesDescriptionTitleH2{
       font-size: 1.2rem;
-      margin-left: 6vw;
+      /* margin-left: 0vw; */
   }
   .VersaillesDescriptionP{
       font-size: 1rem;
-      margin-left: 9vw;
+      margin-left: 6vw;
       width: 78vw;
+  }
+  ul{
+        padding: 6vw;
   }
   .YouMayAlsoLikeVersaillesSection{
       display: none;
@@ -220,7 +256,9 @@
   }
   .CardMobileTxt{
       text-decoration: none;
-
+      text-align: left;
+      margin-left: 3%;
+      margin-right: 3%;
   }
   .carousel-button {
   background-color: #C53073;
@@ -234,27 +272,98 @@
   .carousel-button:hover {
   background-color: #ad2b65;
   }
-}
-
-
-@media (min-width: 600px) and (max-width: 860px) {
-  .MobileCardTitle{
-      margin-top: 9vh;
+  .carousel-button{
+    margin: 10px;
   }
 }
-
-@media (min-width: 861px) and (max-width: 1200px) {
-  .MobileCardTitle{
-      margin-top: 22%;
-  }
+@media (min-width: 1024px) {
+    .VersaillesMobileCarouselSlide{
+        min-width: 130%;
+    }
+    .NextMobile{
+        top: 73% !important;
+    }
+    .PrevMobile{
+        top: 73% !important;
+    }
 }
+@media (min-width: 1439px) {
+    .VersaillesShowAndBuyMobileCard{
+        display: none;
+    }
+  
+     .YouMayAlsoLikeMobile{
+        display: none;
+     }
+     .VersaillesImg{
+        margin-left: 17%;
+        margin-top: 28vh !important;
+        min-width: 61vw;
+        min-height: 53vh !important;
+     }
+     .VersaillesPaymentCard{
+        margin-left: 18vw;
+        margin-top: 24vh;
+     }
+     .CardsVersailles{
+        min-height: 37vh;
+     }
+    .carrousel {
+    position: relative; /* To allow absolutely positioned children */
+    display: flex;
+    align-items: center; /* Center align the content vertically */
+    justify-content: center; /* Center align the content horizontally */
+    width: 40vw;
+    height: 416px;
+    margin-top: 16vh;
+    margin-right: 5vw;
+    }
 
-@media (min-width: 1201px) {
-  .VersaillesShowAndBuyMobileCard{
-      display: none;
-  }
+    .VersaillesImg {
+    width: 100%; /* Ensure it takes up the full container width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 24px; /* Optional: Adds some styling */
+    object-fit: cover; /* Ensures the image scales nicely */
+    transition: transform 0.3s ease; /* Smooth transition for better UX */
+    margin-top: 23vh;
+    }
 
-   .YouMayAlsoLikeMobile{
-      display: none;
-   }
+    .SliderImgBtnVersailles {
+    position: absolute; /* Position the buttons relative to carrousel */
+    top: 50%; /* Vertically center on the carousel */
+    transform: translateY(-50%); /* Adjust to ensure true centering */
+    background-color: #C53073;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 10;
+    }
+
+    /* Place the Prev button on the left */
+    .Prev {
+    left: 3% !important; /* Adjust as needed */
+    top: 66% !important;
+    }
+
+    /* Place the Next button on the right */
+    .Next {
+    right: -49% !important; /* Adjust as needed */
+    top: 66% !important;
+    }
+
+}
+@media (min-width: 2000px){
+    .VersaillesImg{
+        margin-top: 39vh !important;
+    }
+    .VersaillesDescriptionSection{
+        margin-top: 17vh;
+    }
+    .CardsVersailles{
+        min-height: 46vh;
+    }
 }
