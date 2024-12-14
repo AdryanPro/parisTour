@@ -209,7 +209,7 @@
     .Cards{
         margin-bottom: 9vh;
         /* max-height: 59vh; */
-        min-height: 52vh;
+        min-height: 48vh;
     }
     .Cards:hover{
         /* box-shadow: none; */
@@ -247,4 +247,7 @@
         font-size: 2rem;
     }
 
+}
+@media (min-width : 2000px) {
+    
 }
