@@ -123,7 +123,7 @@ export default function Home() {
           </div>
 
           <div className='Cards' onClick={() => window.location.href = '/Bruges'}>
-            <img src={Bruges} className='CardImg' alt="Bruges" />
+            <img src={Bruges} className='CardImg BrugesCardImg' alt="Bruges" />
             <div className="txtCard">
               <p>Bruges</p>
               <p>
