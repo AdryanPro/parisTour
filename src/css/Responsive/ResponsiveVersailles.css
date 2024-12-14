@@ -358,10 +358,10 @@
 }
 @media (min-width: 2000px){
     .VersaillesImg{
-        margin-top: 39vh !important;
+        margin-top: 50vh !important;
     }
     .VersaillesDescriptionSection{
-        margin-top: 17vh;
+        margin-top: 20vh;
     }
     .CardsVersailles{
         min-height: 46vh;
