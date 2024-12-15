@@ -127,8 +127,8 @@ export default function Home() {
             <div className="txtCard">
               <p>Bruges</p>
               <p>
-                Bruges, often called the "Venice of the North," is a beautifully preserved
-                medieval city in Belgium, known for its canals, cobblestone streets, and 
+                Often called the "Venice of the North," is a beautifully preserved
+                medieval city in Belgium, known for its canals, cobblestone streets and 
                 enchanting Gothic architecture.
               </p>
               {/* <p>180€</p> */}
