@@ -516,10 +516,8 @@ export default function Mont() {
               <div className='CardsMont'>
                   <img src={Versailles} className='MontCardImg' alt="Versailles" />
                   <p className='CardMontP'>
-                  The Palace of Versailles, a symbol of opulence and grandeur, is a UNESCO World 
-                  Heritage site located near Paris, France. Once the royal residence of Louis XIV, 
-                  it dazzles with its gilded halls, the iconic Hall of Mirrors, and sprawling, meticulously 
-                  landscaped gardens.
+                  The Palace of Versailles once the royal residence of Louis XIV, a symbol of opulence and grandeur, is a UNESCO World 
+                  Heritage site located near Paris, France.
                   </p>
                   <p className='CardMontP Price'>115€</p>
               </div>

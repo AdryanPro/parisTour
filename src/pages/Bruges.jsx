@@ -483,15 +483,16 @@ export default function Bruges() {
         <div className="YouMayAlsoLikeBrugesSection">
           <h2 className='YouMayAlsoLikeBrugesH2'>You may also like</h2>
           <div className="BrugesCardWrapperYouMayAlsoLike">
-            <Link to='/Bruges' className='BrugesLinkCard'>
+          <Link to='/Versailles' className='BrugesLinkCard'>
               <div className='CardsBruges'>
-                  <img src={Bruges} className='BrugesCardImg' alt="Bruges" />
-                  <h3 className='CardH3'>Bruges</h3>
+                  <img src={Versailles} className='BrugesCardImg' alt="Versailles" />
+                  <h3 className='CardH3'>Versailles</h3>
                   <p className='CardBrugesP'>
-                    Often called the "Venice of the North", is a charming medieval city in Belgium renowned 
-                    for its picturesque canals, cobblestone streets ... 
+                  The Palace of Versailles once the royal residence of Louis XIV, a symbol of opulence and grandeur,
+                   is a UNESCO World
+                  Heritage site located near Paris, France.
                   </p>
-                  <p className='CardBrugesP Price'>180€</p>
+                  <p className='CardBrugesP Price'>115€</p>
               </div>
             </Link>
             <Link to='/D-Day' className='BrugesLinkCard'>

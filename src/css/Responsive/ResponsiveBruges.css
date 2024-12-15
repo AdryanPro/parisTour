@@ -318,9 +318,6 @@
         margin-left: 18vw;
         margin-top: 24vh;
      }
-     .CardsBruges{
-        min-height: 37vh;
-     }
     .carrousel {
     position: relative; /* To allow absolutely positioned children */
     display: flex;
@@ -367,9 +364,23 @@
     right: -49% !important; /* Adjust as needed */
     top: 66% !important;
     }
-
+    .CardsBruges{
+        min-height: 42vh;
+        overflow: hidden;
+        object-fit: contain;
+     }
+     .BrugesCardImg{
+        max-height: 192px;
+        min-height: 190px;
+        max-width: 56%;
+        min-width: 50%;
+        border-radius: 24px 24px 0 0; /* Top-left and top-right corners are rounded */
+     }
 }
 @media (min-width: 2000px){
+    .BrugesHeader{
+        min-width: 87vw;
+    }
     .BrugesImg{
         margin-top: 50vh !important;
     }

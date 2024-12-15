@@ -213,14 +213,14 @@ export default function Versailles() {
           <h1 className="VersaillesPriceH1">{price} €/pers</h1>
           <h3 className='VersaillesBuyCardH3'>Chose a date :</h3>
           <form>
-            <input type="date"
-            className='DateSelecteur'
-            defaultValue={dateTimeLocal}
-            min={today}
-            value={selectedDate}
-            onChange={(e) => setSelectedDate(e.target.value)}
+            <input
+              type="date"
+              className="DateSelecteur"
+              min={today} // Set the minimum selectable date
+              value={selectedDate} // Controlled by React state
+              onChange={(e) => setSelectedDate(e.target.value)} // Updates state when changed
             />
-          </form>
+        </form>
           
 
           {/* Show available times only if a date is selected */}

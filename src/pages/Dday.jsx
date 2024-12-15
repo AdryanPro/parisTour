@@ -501,11 +501,11 @@ export default function Dday() {
             <Link to='/Versailles' className='DdayLinkCard'>
               <div className='CardsDday'>
                   <img src={Versailles} className='DdayCardImg' alt="Versailles" />
+                  <h3 className='CardH3'>Versailles</h3>
                   <p className='CardDdayP'>
-                  The Palace of Versailles, a symbol of opulence and grandeur, is a UNESCO World 
-                  Heritage site located near Paris, France. Once the royal residence of Louis XIV, 
-                  it dazzles with its gilded halls, the iconic Hall of Mirrors, and sprawling, meticulously 
-                  landscaped gardens.
+                  The Palace of Versailles once the royal residence of Louis XIV, a symbol of opulence and grandeur,
+                   is a UNESCO World
+                  Heritage site located near Paris, France.
                   </p>
                   <p className='CardDdayP Price'>115€</p>
               </div>

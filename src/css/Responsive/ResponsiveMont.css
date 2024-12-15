@@ -317,9 +317,6 @@
         margin-left: 18vw;
         margin-top: 24vh;
      }
-     .CardsMont{
-        min-height: 37vh;
-     }
     .carrousel {
     position: relative; /* To allow absolutely positioned children */
     display: flex;
@@ -366,7 +363,14 @@
     right: -49% !important; /* Adjust as needed */
     top: 66% !important;
     }
-
+    .CardsMont{
+        min-height: 37vh;
+     }
+     .MontCardImg{
+        max-height: 192px;
+        min-height: 190px;
+        border-radius: 24px 24px 0 0; /* Top-left and top-right corners are rounded */
+     }
 }
 @media (min-width: 2000px){
     .MontImg{

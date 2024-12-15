@@ -91,12 +91,12 @@
   }
   .PrevMobile {
     left: 3% !important; /* Adjust as needed */
-    top: 62% !important;
+    top: 10% !important;
   }
   /* Place the Next button on the right */
   .NextMobile {
     right: 3% !important; /* Adjust as needed */
-    top: 62% !important; 
+    top: 10% !important; 
   }
   /* .SliderImgBtnVersailles {
       position: absolute;
@@ -317,9 +317,6 @@
         margin-left: 18vw;
         margin-top: 24vh;
      }
-     .CardsVersailles{
-        min-height: 37vh;
-     }
     .carrousel {
     position: relative; /* To allow absolutely positioned children */
     display: flex;
@@ -358,14 +355,22 @@
     /* Place the Prev button on the left */
     .Prev {
     left: 3% !important; /* Adjust as needed */
-    top: 66% !important;
+    margin-top: 23% !important;
     }
 
     /* Place the Next button on the right */
     .Next {
     right: -49% !important; /* Adjust as needed */
-    top: 66% !important;
+    margin-top: 23% !important;
     }
+    .CardsVersailles{
+        min-height: 37vh;
+     }
+     .VersaillesCardImg{
+        max-height: 192px;
+        min-height: 190px;
+        border-radius: 24px 24px 0 0; /* Top-left and top-right corners are rounded */
+     }
 
 }
 @media (min-width: 2000px){
@@ -373,9 +378,18 @@
         margin-top: 50vh !important;
     }
     .VersaillesDescriptionSection{
-        margin-top: 20vh;
+        margin-top: 28vh;
     }
     .CardsVersailles{
         min-height: 46vh;
+    }
+    .SliderImgBtnVersailles{
+        margin-top: 30%;
+    }
+    .Next{
+        top: 200% !important;
+    }
+    .Prev{
+        top: 200% !important;
     }
 }
