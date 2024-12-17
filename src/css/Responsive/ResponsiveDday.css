@@ -4,6 +4,20 @@
         margin-left: 6vw;
         margin-right: 6vw;
     }
+    .DdayMobileCarouselSlide {
+        min-width: 100% !important; /* Full container width */
+        max-width: 100% !important; /* Full container width */
+        height: 100%; /* Set height equal to viewport width to create a square */
+        max-height: 340px; /* Optional: Limit the maximum height */
+        object-fit: cover; /* Keep image scaling intact */
+        border-radius: 24px; /* Optional: Add rounded corners */
+    }
+    .NextMobile{
+        margin-top: 23% !important;
+    }
+    .PrevMobile{
+        margin-top: 23% !important;
+    }
 }
 @media (min-width: 600px) and (max-width: 860px) {
     .MobileCardTitle{

@@ -132,4 +132,9 @@
     .NavMenu.Open {
         transform: translateY(0);
     }
+    .GrayLineLogo{
+        margin-left: 0;
+        max-width: 125px;
+        max-height: 125px;
+    }
 }
