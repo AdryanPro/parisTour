@@ -1,4 +1,5 @@
 /* Privatisation */
+/* RESPONSIVE START HERE */
 @media (max-width: 599px) {
     .PrivatisationDescriptionTitleH2{
         margin-left: 6vw;
@@ -105,12 +106,12 @@
   }
   .PrevMobile {
     left: 3% !important; /* Adjust as needed */
-    top: 62% !important;
+    top: 10% !important;
   }
   /* Place the Next button on the right */
   .NextMobile {
     right: 3% !important; /* Adjust as needed */
-    top: 62% !important; 
+    top: 10% !important; 
   }
   /* .SliderImgBtnPrivatisation {
       position: absolute;
@@ -331,9 +332,6 @@
         margin-left: 18vw;
         margin-top: 24vh;
      }
-     .CardsPrivatisation{
-        min-height: 37vh;
-     }
     .carrousel {
     position: relative; /* To allow absolutely positioned children */
     display: flex;
@@ -343,15 +341,6 @@
     height: 416px;
     margin-top: 16vh;
     margin-right: 5vw;
-    }
-
-    .PrivatisationImg {
-    width: 100%; /* Ensure it takes up the full container width */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 24px; /* Optional: Adds some styling */
-    object-fit: cover; /* Ensures the image scales nicely */
-    transition: transform 0.3s ease; /* Smooth transition for better UX */
-    margin-top: 23vh;
     }
 
     .SliderImgBtnPrivatisation {
@@ -372,14 +361,22 @@
     /* Place the Prev button on the left */
     .Prev {
     left: 3% !important; /* Adjust as needed */
-    top: 66% !important;
+    margin-top: 11% !important;
     }
 
     /* Place the Next button on the right */
     .Next {
     right: -49% !important; /* Adjust as needed */
-    top: 66% !important;
+    margin-top: 11% !important;
     }
+    .CardsPrivatisation{
+        min-height: 37vh;
+     }
+     .PrivatisationCardImg{
+        max-height: 192px;
+        min-height: 190px;
+        border-radius: 24px 24px 0 0; /* Top-left and top-right corners are rounded */
+     }
 
 }
 @media (min-width: 2000px){
@@ -387,9 +384,18 @@
         margin-top: 50vh !important;
     }
     .PrivatisationDescriptionSection{
-        margin-top: 20vh;
+        margin-top: 28vh;
     }
     .CardsPrivatisation{
         min-height: 46vh;
+    }
+    .SliderImgBtnPrivatisation{
+        margin-top: 30%;
+    }
+    .Next{
+        top: 200% !important;
+    }
+    .Prev{
+        top: 200% !important;
     }
 }

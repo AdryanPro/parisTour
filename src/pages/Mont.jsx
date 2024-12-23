@@ -252,7 +252,7 @@ export default function Mont() {
           </div>
           <h3 className='MontBuyCardH3'>Total : {price * count}€</h3>
           {selectedDate && selectedTime && (
-            <p className='PaymentWarnning'>Payments are made in cash only at the meeting point.</p>
+            <p className='PaymentWarnning'>Payments are made by card or cash at the meeting point.</p>
           )}
           {/* <p className='PaymentWarnning'>Payment are made in cash only at the meating point</p> */}
           <button className='MontBuyCardBtn' onClick={togglePopup}>Book Now</button>

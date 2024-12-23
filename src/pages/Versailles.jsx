@@ -256,7 +256,7 @@ export default function Versailles() {
           </div>
           <h3 className='VersaillesBuyCardH3'>Total : {price * count}€</h3>
           {selectedDate && selectedTime && (
-            <p className='PaymentWarnning'>Payments are made in cash only at the meeting point.</p>
+            <p className='PaymentWarnning'>Payments are made by card or cash at the meeting point.</p>
           )}
           {/* <p className='PaymentWarnning'>Payment are made in cash only at the meating point</p> */}
           <button className='VersaillesBuyCardBtn' onClick={togglePopup}>Book Now</button>
@@ -492,7 +492,7 @@ export default function Versailles() {
           <h2 className='YouMayAlsoLikeVersaillesH2'>You may also like</h2>
           <div className="VersaillesCardWrapperYouMayAlsoLike">
             <Link to='/Bruges' className='VersaillesLinkCard'>
-              <div className='CardsVersailles'>
+              <div className='CardsVersailles' onClick={() => window.location.href = '/Bruges'}>
                   <img src={Bruges} className='VersaillesCardImg' alt="Bruges" />
                   <h3 className='CardH3'>Bruges</h3>
                   <p className='CardVersaillesP'>
@@ -503,7 +503,7 @@ export default function Versailles() {
               </div>
             </Link>
             <Link to='/D-Day' className='VersaillesLinkCard'>
-              <div className='CardsVersailles'>
+              <div className='CardsVersailles' onClick={() => window.location.href = '/D-Day'}>
                   <img src={Dday} className='VersaillesCardImg' alt="Dday" />
                   <h3 className='CardH3'>D-day</h3>
                   <p className='CardVersaillesP'>
@@ -514,8 +514,8 @@ export default function Versailles() {
             </Link>
 
             <Link to='/Mont-Saint-Michel' className='VersaillesLinkCard'>
-              <div className='CardsVersailles'>
-                  <img src={Mont} className='VersaillesCardImg' alt="Mont" />
+              <div className='CardsVersailles' onClick={() => window.location.href = '/Mont-Saint-Michel'}>
+                  <img src={Mont} className='VersaillesCardImg' alt="Mont"/>
                   <h3 className='CardH3'>Mont-Saint-Michel</h3>
                   <p className='CardVersaillesP'>
                     Audio guided tour of the Mont-Saint-Michel, day trip from Paris with luxury transportation

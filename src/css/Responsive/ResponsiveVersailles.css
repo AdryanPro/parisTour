@@ -342,15 +342,6 @@
     margin-right: 5vw;
     }
 
-    .VersaillesImg {
-    width: 100%; /* Ensure it takes up the full container width */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 24px; /* Optional: Adds some styling */
-    object-fit: cover; /* Ensures the image scales nicely */
-    transition: transform 0.3s ease; /* Smooth transition for better UX */
-    margin-top: 23vh;
-    }
-
     .SliderImgBtnVersailles {
     position: absolute; /* Position the buttons relative to carrousel */
     top: 50%; /* Vertically center on the carousel */
@@ -369,13 +360,13 @@
     /* Place the Prev button on the left */
     .Prev {
     left: 3% !important; /* Adjust as needed */
-    margin-top: 23% !important;
+    margin-top: 11% !important;
     }
 
     /* Place the Next button on the right */
     .Next {
     right: -49% !important; /* Adjust as needed */
-    margin-top: 23% !important;
+    margin-top: 11% !important;
     }
     .CardsVersailles{
         min-height: 37vh;

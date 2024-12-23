@@ -62,7 +62,7 @@ export default function Privatisation() {
   };
 
   // General departure times available every day
-  const departureTimes = ["07:30 AM"];
+  const departureTimes = ["6 Hours(half a day)", "10 Hours (full day)"];
   
   //PopUp handeler
   const [isPopupVisible, setIsPopupVisible] = useState(false);
@@ -75,7 +75,19 @@ export default function Privatisation() {
     setIsPopupVisible(!isPopupVisible);
   };
   //Set the price 
-  const price = 2050;
+  const [price, setPrice] = useState(1500); // Default price for "6 Hours (half a day)"
+
+const handleTimeChange = (e) => {
+  const selected = e.target.value;
+  setSelectedTime(selected);
+
+  // Update price dynamically based on selection
+  if (selected === "6 Hours(half a day)") {
+    setPrice(1500);
+  } else if (selected === "10 Hours (full day)") {
+    setPrice(2000);
+  }
+};
 
   const [formData, setFormData] = useState({
     firstName: '',
@@ -232,7 +244,7 @@ export default function Privatisation() {
               <select
                 value={selectedTime}
                 className='DateSelecteur'
-                onChange={(e) => setSelectedTime(e.target.value)}
+                onChange={handleTimeChange}
               >
                 <option value="">Select a time</option>
                 {departureTimes.map((time, index) => (
@@ -258,7 +270,7 @@ export default function Privatisation() {
           </div>
           <h3 className='PrivatisationBuyCardH3'>Total : {price}€</h3>
           {selectedDate && selectedTime && (
-            <p className='PaymentWarnning'>Payments are made in cash only at the meeting point.</p>
+            <p className='PaymentWarnning'>Payments are made by card or cash at the meeting point.</p>
           )}
           {/* <p className='PaymentWarnning'>Payment are made in cash only at the meating point</p> */}
           <button className='PrivatisationBuyCardBtn' onClick={togglePopup}>Book Now</button>
@@ -375,7 +387,7 @@ export default function Privatisation() {
                 <select
                   className='TimeSelecteur'
                   value={selectedTime}
-                  onChange={(e) => setSelectedTime(e.target.value)}
+                  onChange={handleTimeChange}
                 >
                   <option value="">Select a time</option>
                   {departureTimes.map((time, index) => (
